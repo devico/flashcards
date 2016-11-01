@@ -1,3 +1,9 @@
+/*
+ *= require bootstrap-theme.min.css
+ *= require bootstrap.min.css
+ *
+ */
+
 #container {
   margin: 48px auto;
   width: 960px;
