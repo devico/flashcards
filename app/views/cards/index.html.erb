@@ -1,0 +1,18 @@
+<section id="container">
+  <section>
+    <table>
+	  <thead>
+	    Все карточки      
+      </thead>
+	  <tbody>
+	    <% @cards.each do |card| %>
+		  <tr>
+		    <td><%= card.original_text %></td>
+			<td><%= card.translated_text %></td>
+			<td><%= card.review_date %></td>
+		  </tr>
+	    <%end%>
+	  </tbody>
+    </table>
+  </section>
+</section>
