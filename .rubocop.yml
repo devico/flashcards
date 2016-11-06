@@ -1,0 +1,22 @@
+AllCops:
+  TargetRubyVersion: 2.2
+   DisplayCopNames: true
+   DisplayStyleGuide: false
+   Exclude:
+      - 'vendor/**/*'
+      - 'db/**/*'
+      - 'tmp/**/*'
+      - 'bin/**/*'
+      - 'lib/backup/**/*'
+      - 'lib/ci/backup/**/*'
+      - 'lib/tasks/**/*'
+      - 'lib/ci/migrate/**/*'
+      - 'lib/email_validator.rb'
+      - 'lib/gitlab/upgrader.rb'
+      - 'lib/gitlab/seeder.rb'
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false

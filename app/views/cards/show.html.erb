@@ -1,0 +1,12 @@
+<section id="container">
+  <section>
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>Карточка</strong><br>
+      <%= @card.original_text %>
+    </p>
+
+<%= link_to 'Редактировать', edit_card_path(@card) %>
+<%= link_to 'Назад', cards_path %>
+  </section>
+</section>
