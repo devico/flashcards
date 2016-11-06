@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20161104185632) do
   create_table "cards", force: :cascade do |t|
     t.string "original_text"
     t.string "translated_text"
-    t.string "review_date"
+    t.date   "review_date"
   end
 
 end

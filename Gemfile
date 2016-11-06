@@ -5,7 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg'
+# Use rubocop
 gem 'rubocop', require: false
+# Use simple-form
+gem 'simple_form'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
