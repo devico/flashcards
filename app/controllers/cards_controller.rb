@@ -19,12 +19,11 @@ class CardsController < ApplicationController
       if @card.save
         redirect_to @card
       else
-  	   render :new
-  	end
+        render :new
+      end
   end
 
   def update
-    @card = Card.find(set_card)
     if @card.update(card_params)
       redirect_to @card
     else
@@ -33,7 +32,6 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @card = Card.find(set_card)
     @card.destroy
     redirect_to cards_path
   end
@@ -45,6 +43,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text, :review_date)
+    params.require(:card).permit(:original_text, :translated_text)
   end
 end
