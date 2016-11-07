@@ -3,9 +3,8 @@ class Card < ApplicationRecord
   validate :check_original_and_translated_text
 
   def check_original_and_translated_text
-    if (original_text.downcase.strip == translated_text.downcase.strip)
-      errors.add(:original_text, "original text can’t be same as translated")
-      errors.add(:translated_text, "translated text can’t be same as original")
+    if UnicodeUtils.downcase(original_text.strip) == UnicodeUtils.downcase(translated_text.strip)
+      errors.add(:base, "original and translated text can’t be same")
     end
   end
 

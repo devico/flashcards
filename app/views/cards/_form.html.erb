@@ -1,5 +1,15 @@
 <%= simple_form_for @card do |f| %>
-  <%= f.error_notification %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+      <ul>
+      <% @card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.input :original_text, label: 'Original text:' %>
   <%= f.input :translated_text , label: 'Translated text:' %>
   <%= f.submit %>

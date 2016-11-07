@@ -9,6 +9,7 @@ gem 'pg', '~> 0.18'
 gem 'rubocop', require: false
 # Use simple-form
 gem 'simple_form'
+gem 'unicode_utils'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
