@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'nokogiri'
+require 'open-uri'
+require 'net/http'
+
+BASE_URL = "http://www.languagedaily.com"
+urls = []
+url = 'http://www.languagedaily.com/learn-german/vocabulary'
+doc = Nokogiri::HTML(open(url))
+links = doc.css('a')
+urls = links.map { |link| link['href'] }.compact.uniq.select { |s| s.match(/common-german-words/) }
+
+urls.each do |a|
+  page = Nokogiri::HTML(open("#{BASE_URL}#{a}"))
+  page.css('#jsn-mainbody div.com-content div div.jsn-article-content table tbody').each do |el|
+    original_text = []
+    translated_text = []
+    original_text = el.css('td.bigLetter').map { |org| org.text }
+    translated_text = el.css('td:nth-child(3)').map { |trn| trn.text }
+    translated_text.shift
+    words = Hash[original_text.zip(translated_text)]
+    words.each do |o, t|
+      Card.create(:original_text => o, :translated_text => t) unless t.empty?
+    end
+  end
+end
