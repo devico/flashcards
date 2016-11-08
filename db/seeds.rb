@@ -21,7 +21,6 @@ for i in 1..12
     "#{BASE_URL}-#{i}"
   end
 
-  puts url
   if Net::HTTP.get_response(URI.parse(url)).is_a?(Net::HTTPSuccess)
     page = Nokogiri::HTML(open(url))
     page.css('#jsn-mainbody div.com-content div div.jsn-article-content table tbody').each do |el|
@@ -32,8 +31,7 @@ for i in 1..12
       translated_text.shift
       words = Hash[original_text.zip(translated_text)]
 #      words.each { |o, t| Card.create(:original_text => o, :translated_text => t) }
-      puts words.class
-      end
+    end
   else
     puts "error open URL"
   end
