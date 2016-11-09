@@ -1,4 +1,4 @@
-<%= simple_form_for 'check', url: '/cards/check_card' do |f| %>
+<%= simple_form_for 'check', url: '/welcome/check' do |f| %>
   <%= f.label @card.translated_text %>
   <hr>
   <%= f.input :card_id, as: :hidden, value: @card.id %>

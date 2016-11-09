@@ -2,7 +2,6 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
   def index
     @cards = Card.all
-
   end
 
   def show
@@ -35,14 +34,6 @@ class CardsController < ApplicationController
   def destroy
     @card.destroy
     redirect_to cards_path
-  end
-
-  def review
-    @card = Card.order("RANDOM()").first
-  end
-
-  def check_card
-    :card_id
   end
 
   private
