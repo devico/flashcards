@@ -39,11 +39,10 @@ class CardsController < ApplicationController
 
   def review
     @card = Card.order("RANDOM()").first
-    if @card.review_date == Time.now
-      @card
-    else
-      puts "Все карточки в актуальном состоянии"
-    end
+  end
+
+  def check_card
+    :card_id
   end
 
   private
