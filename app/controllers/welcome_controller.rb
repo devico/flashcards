@@ -8,20 +8,19 @@ class WelcomeController < ApplicationController
 
   def check
     result = CheckCard.call(
-      params: card_params,
-      card_id: :id,
-      user_text: :original_text
+      card_id: card_params[:card_id],
+      user_text: card_params[:user_text]
     )
     if result.success?
-      redirect_to result.card, notice: 'Правильно!'
+      redirect_to root_path, notice: "Правильно!"
     else
-      redirect_to root, notice: 'Не правильно!'
+      redirect_to root_path, notice: "Не правильно!"
     end
   end
 
     private
 
     def card_params
-      params.require(:card).permit(:card_id, :user_text)
+      params.require(:check).permit(:card_id, :user_text)
     end
 end

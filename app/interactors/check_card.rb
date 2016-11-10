@@ -5,8 +5,7 @@ class CheckCard
     card = Card.find(context.card_id)
     if card.original_text == context.user_text
       card.review_date = Date.today + 3.days
-      card.update(card.id)
-      redirect_to root
+      card.save
     else
       context.fail!
     end
