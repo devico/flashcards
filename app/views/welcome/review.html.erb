@@ -1,6 +1,11 @@
 <section id="container">
   <section>
-  <p id="notice"><%= notice %></p>
+    <% if flash[:success] -%>
+      <p class='success'><%= flash[:success] %></p>
+    <% end -%>
+    <% if flash[:error] -%>
+      <p class='error'><%= flash[:error] %></p>
+    <% end -%>
     <%= render 'form_review' %>
   </section>
 </section>

@@ -9,12 +9,15 @@ class WelcomeController < ApplicationController
   def check
     result = CheckCard.call(
       card_id: card_params[:card_id],
-      user_text: card_params[:user_text]
+      user_text: card_params[:user_text],
+      flash: flash
     )
     if result.success?
-      redirect_to root_path, notice: "Правильно!"
+      flash[:success] = result.flash
+      redirect_to root_path
     else
-      redirect_to root_path, notice: "Не правильно!"
+      flash[:error] = result.flash
+      redirect_to root_path
     end
   end
 
