@@ -4,8 +4,7 @@ class CheckCard
   def call
     card = Card.find(context.card_id)
     if card.original_text == context.user_text
-      card.review_date = Date.today + 3.days
-      card.save
+      card.update(review_date: 3.days.since)
       context.message = "Правильно"
     else
       context.fail!(message: "Не правильно")
