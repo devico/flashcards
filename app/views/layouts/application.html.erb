@@ -8,28 +8,28 @@
 </head>
 <body>
 
-	<div class="container">
-	  <div class="row">
-	    <h1>Флэшкарточкер</h1>
-	    <div class="navbar navbar-inverse">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="responsive-menu">
+<div class="container">
+  <div class="row">
+    <h1>Флэшкарточкер</h1>
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=" responsive-menu">
 
-	          </button>
-	        </div>
-	        <div class="collapse navbar-collapse" id="responsive-menu">
-	          <ul class="nav navbar-nav">
-	            <li><%= link_to 'Все карточки', cards_path %></li>
-			<li><%= link_to 'Добавить карточку', new_card_path %></li>
-	          </ul>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-menu">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Все карточки', cards_path %></li>
+            <li><%= link_to 'Добавить карточку', new_card_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <%= yield %>
+<%= yield %>
 
-  </body>
+</body>
 </html>
