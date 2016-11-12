@@ -8,9 +8,8 @@ describe Card do
     end
 
     it "is not valid when the texts are identical" do
-     expect(Card.new(original_text: "Дом", translated_text: " дом")).to_not be_valid
+      expect(Card.new(original_text: "Дом", translated_text: " дом")).to_not be_valid
     end
-
    end
 
     describe '#set_review_date' do

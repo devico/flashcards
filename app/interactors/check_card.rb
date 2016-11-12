@@ -11,3 +11,4 @@ class CheckCard
     end
   end
 end
+
