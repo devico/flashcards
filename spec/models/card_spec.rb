@@ -12,20 +12,18 @@ describe Card do
     end
 
     it "is not valid when original_text is nil" do
-      card = Card.new(original_text: "House", translated_text: "дом")
-      card.original_text = nil
+      card = Card.create(original_text: "", translated_text: "дом")
       expect(card.errors[:original_text]).to include("can't be blank")
     end
 
-    it "is not valid when original_text is nil" do
-      card = Card.new(original_text: "House", translated_text: "дом")
-      card.translated_text = nil
+    it "is not valid when translated text is nil" do
+      card = Card.create(original_text: "House", translated_text: "")
       expect(card.errors[:translated_text]).to include("can't be blank")
     end
 
-    it "is not valid when original_text is nil" do
-      card = Card.new(original_text: "дом", translated_text: "дом")
-      expect(card.errors.values).to include("original and translated text can’t be same")
+    it "is not valid when the texts are identical" do
+      card = Card.create(original_text: "дом", translated_text: "дом")
+      expect(card.errors.values).to include(["original and translated text can’t be same"])
     end
 
    end
