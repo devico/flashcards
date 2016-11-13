@@ -14,3 +14,4 @@ before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database courseselect_test;' -U postgres
 
+install: bundle install --jobs=3 --retry=3
