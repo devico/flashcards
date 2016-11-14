@@ -4,6 +4,7 @@ describe Card do
   describe '#check_original_and_translated_text' do
 
     it "is valid when the texts are not the same" do
+      #expect(card).to be_valid
       expect(Card.new(original_text: "House", translated_text: "дом")).to be_valid
     end
 
