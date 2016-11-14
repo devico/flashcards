@@ -4,6 +4,7 @@ RSpec.feature "Card check", :type => :feature do
 
   before do
     card = FactoryGirl.create(:card)
+    user = FactoryGirl.create(:user)
   end
 
   scenario "successfully checks card" do
