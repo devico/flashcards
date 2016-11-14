@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature "Card check", :type => :feature do
 
   before do
+    user = FactoryGirl.create(:user)
     card = FactoryGirl.create(:card)
   end
 

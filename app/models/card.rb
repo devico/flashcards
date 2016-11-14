@@ -1,4 +1,7 @@
 class Card < ApplicationRecord
+
+  belongs_to :user
+
   validates :original_text, :translated_text, presence: true
   validate :check_original_and_translated_text
 
