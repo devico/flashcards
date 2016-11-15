@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'unicode_utils'
 gem 'nokogiri'
 gem 'interactor'
+gem 'sorcery'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

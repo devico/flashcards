@@ -1,0 +1,19 @@
+<section id="container">
+  <section>
+    <h1>Log in</h1>
+    <% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%= simple_form_for :sessions, :url => sessions_path do |f| %>
+      <div class="field">
+        <%= f.input :username, :required =>true, :label => 'Username:' %>
+      </div>
+      <div class="field">
+        <%= f.input :password, :required =>true, :label => 'Password:' %>
+      </div>
+      <div class="actions"><%= f.button :submit, "Login" %></div>
+    <% end %>
+  </section>
+</section>
