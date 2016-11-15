@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   before_filter :require_login
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+
   def index
     @cards = Card.all
   end
@@ -17,6 +18,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    @card.user_id = current_user.id
       if @card.save
         redirect_to @card
       else
