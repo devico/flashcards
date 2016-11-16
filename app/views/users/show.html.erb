@@ -2,10 +2,10 @@
   <section>
     <p>
       <strong>User</strong><br>
-      <%= @user.username %>
-      <%= @user.email %>
+      <%= current_user.username %>
+      <%= current_user.email %>
     </p>
-    <%= link_to 'Редактировать', edit_user_path(@user) %>
+    <%= link_to 'Редактировать', edit_user_path(current_user) %>
     <%= link_to 'Назад', welcome_index_path %>
   </section>
 </section>

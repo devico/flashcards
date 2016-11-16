@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :show]
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
 
   def show
   end
@@ -24,8 +21,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      redirect_to @user
+    if current_user.update(user_params)
+      redirect_to current_user
     else
       render :edit
     end
@@ -33,23 +30,8 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find(params[:id])
-  end
-
   def user_params
     params.require(:user).permit(:username, :email, :password, :confirmation_password)
   end
 
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
-
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user
-  end
 end
