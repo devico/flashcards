@@ -1,7 +1,12 @@
 class User < ApplicationRecord
-  authenticates_with_sorcery!
 
- # attr_accessible :username, :password, :password_confirmation
+  authenticates_with_sorcery! do |config|
+    config.authentications_class = Authentication
+  end
+
+  has_many :cards
+  has_many :authentications, :dependent => :destroy
+  accepts_nested_attributes_for :authentications
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
@@ -9,7 +14,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
   validates_presence_of :email
   validates_uniqueness_of :email
-
-  has_many :cards
 
 end
