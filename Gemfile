@@ -6,6 +6,7 @@ gem 'pg', '~> 0.18'
 # Use rubocop
 gem 'rubocop', require: false
 gem 'dotenv-rails', groups: [:development, :test]
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'nokogiri'
   gem 'interactor'
   gem 'sorcery'
+  gem 'rails-controller-testing'
 end
 
 group :development do
