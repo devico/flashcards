@@ -8,8 +8,9 @@ before do
 
   describe "GET new" do
     it "returns http success" do
-      login_user(@user.username, @user.password)
-      expect(response).to render_template("/sessions/new")
+      get :new
+      # login_user(@user.username, @user.password)
+      expect(response).to render_template(:new)
     end
   end
 end

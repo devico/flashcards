@@ -43,4 +43,9 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
   config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
 end
