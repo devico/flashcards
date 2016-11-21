@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, :type => :controller do
 
-  # describe "GET new" do
-  #   it "returns http success" do
-  #     get
-  #     expect(response).to be_success
-  #   end
+before do
+    @user = FactoryGirl.create(:user)
+  end
+
+  describe "GET new" do
+    it "returns http success" do
+      login_user(@user.username, @user.password)
+      expect(response).to render_template("/sessions/new")
+    end
+  end
 end
