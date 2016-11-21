@@ -44,7 +44,6 @@ group :development, :test do
   gem 'nokogiri'
   gem 'interactor'
   gem 'sorcery'
-  gem 'rails-controller-testing'
 end
 
 group :development do
