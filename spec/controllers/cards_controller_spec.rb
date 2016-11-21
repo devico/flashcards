@@ -11,7 +11,7 @@ RSpec.describe CardsController, :type => :controller do
 
     it "show all cards" do
       get :index
-      expect(response).to render_template("index")
+      expect(response).to render_template(:index)
       expect(response).to have_http_status(:success)
     end
   end
@@ -20,8 +20,8 @@ RSpec.describe CardsController, :type => :controller do
 
     it "show card page" do
       @card = FactoryGirl.create(:card)
-      get :show, card: {id: @card.id}
-      expect(response).to render_template("show")
+      get :show, id: @card.id
+      expect(response).to render_template(:show)
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe CardsController, :type => :controller do
 
     it "renders #new form when validates fail" do
       get :new, card: { original_text: "", translated_text: "природа" }
-      expect(response).to render_template("/cards/new")
+      expect(response).to render_template(:new)
     end
   end
 
@@ -43,7 +43,7 @@ RSpec.describe CardsController, :type => :controller do
     it "when change card" do
       @card = FactoryGirl.create(:card)
       get :update, id: @card.id, card: {original_text: 'Megacloud'}
-      expect(response).to redirect_to("/cards/#{Card.find(@card.id)}")
+      expect(response).to redirect_to("/cards/#{@card.id}")
     end
   end
 
@@ -53,7 +53,7 @@ RSpec.describe CardsController, :type => :controller do
     it "when card need to delete" do
       @card = FactoryGirl.create(:card)
       delete :destroy, id: @card.id
-      expect(response).to redirect_to("cards_path")
+      expect(response).to redirect_to("/cards")
     end
   end
 end
