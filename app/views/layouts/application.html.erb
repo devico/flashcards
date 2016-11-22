@@ -10,6 +10,19 @@
 
 <div class="container">
   <div class="row">
+    <div class="user_nav">
+      <% if current_user %>
+        Logged in as <%= current_user.username %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+        <%= link_to "Log out", logout_path %>
+      <% else %>
+        <%= link_to "Sign up", signup_path %>
+        <%= link_to "Log in", login_path %>
+        <%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
     <h1>Флэшкарточкер</h1>
     <div class="navbar navbar-inverse">
       <div class="container">

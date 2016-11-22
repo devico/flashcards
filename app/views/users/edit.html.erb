@@ -1,0 +1,22 @@
+<section id="container">
+  <section>
+    <h1>Edit profile</h1>
+
+    <%= simple_form_for current_user do |f| %>
+      <% if current_user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(current_user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <ul>
+              <% current_user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+        </div>
+      <% end %>
+      <%= f.input :email, label: 'Email:' %>
+      <%= f.input :password , label: 'Password:' %>
+      <%= f.input :password_confirmation, label: 'Confirm password:' %>
+      <%= f.submit %>
+    <% end %>
+  </section>
+</section>
