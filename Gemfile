@@ -6,7 +6,13 @@ gem 'pg', '~> 0.18'
 # Use rubocop
 gem 'rubocop', require: false
 gem 'dotenv-rails', groups: [:development, :test]
-
+# Use simple-form
+gem 'simple_form'
+gem 'unicode_utils'
+gem 'nokogiri'
+gem 'interactor'
+gem 'sorcery'
+gem 'rails-controller-testing'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -38,13 +44,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
   gem 'factory_girl_rails'
-  # Use simple-form
-  gem 'simple_form'
-  gem 'unicode_utils'
-  gem 'nokogiri'
-  gem 'interactor'
-  gem 'sorcery'
-  gem 'rails-controller-testing'
 end
 
 group :development do
