@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :user do |item|
-    item.username 'devico'
-    item.email 'dsn@ex.ua'
+    item.username 'test_user '
+    item.email 'tst@ex.ua'
     item.password '111'
-    item.id 9
+    item.id 15
   end
 end

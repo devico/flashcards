@@ -11,7 +11,7 @@ RSpec.describe UsersController, :type => :controller do
 
     it "renders #new form when validates fail" do
       get :new, user: { username: "sergey", email: "sergo@ex.ua", password: "" }
-      expect(response).to render_template("/users/new")
+      expect(response).to render_template(:new)
     end
   end
 
