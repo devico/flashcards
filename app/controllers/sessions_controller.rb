@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = login(params[:sessions][:username], params[:sessions][:password])
     if user
-      redirect_to welcome_index_url, :notice => "Logged in!"
+      redirect_back_or_to welcome_index_url, :notice => "Logged in!"
     else
       flash.now[:alert] = "Username or password was invalid"
       render :new

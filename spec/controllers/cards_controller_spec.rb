@@ -28,12 +28,12 @@ RSpec.describe CardsController, :type => :controller do
   describe "#create" do
 
     it "redirects to the card's page after create card" do
-      post :create, card: { original_text: "Miss", translated_text: "девушка" }
+      post :create, card: { original_text: "Mister", translated_text: "парень" }
       expect(response).to redirect_to("/cards/#{Card.last.id}")
     end
 
     it "renders #new form when validates fail" do
-      get :new, card: { original_text: "", translated_text: "природа" }
+      get :new, card: { original_text: "", translated_text: "вода" }
       expect(response).to render_template(:new)
     end
   end
@@ -42,7 +42,7 @@ RSpec.describe CardsController, :type => :controller do
 
     it "when change card" do
       @card = FactoryGirl.create(:card)
-      get :update, id: @card.id, card: {original_text: 'Megacloud'}
+      get :update, id: @card.id, card: {original_text: 'Gigacloud'}
       expect(response).to redirect_to("/cards/#{ @card.id }")
     end
   end
