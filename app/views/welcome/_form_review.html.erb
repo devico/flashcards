@@ -1,4 +1,5 @@
 <%= simple_form_for 'check', url: '/welcome/check' do |f| %>
+  <%= image_tag @card.image_url(:thumb).to_s %><br>
   <%= f.label @card.translated_text %>
   <hr>
   <%= f.input :card_id, as: :hidden, input_html: { value: @card.id } %>

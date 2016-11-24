@@ -13,6 +13,8 @@ gem 'nokogiri'
 gem 'interactor'
 gem 'sorcery'
 gem 'rails-controller-testing'
+gem 'carrierwave'
+gem 'rmagick'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

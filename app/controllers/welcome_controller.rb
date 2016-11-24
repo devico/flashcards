@@ -15,9 +15,9 @@ class WelcomeController < ApplicationController
     redirect_to root_path, notice: result.message
   end
 
-    private
+  private
 
-    def card_params
-      params.require(:check).permit(:card_id, :user_text)
+  def card_params
+    params.require(:check).permit(:card_id, :user_text, :image)
     end
 end
