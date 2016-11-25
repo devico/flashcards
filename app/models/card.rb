@@ -1,6 +1,7 @@
 class Card < ApplicationRecord
 
   belongs_to :user
+  mount_uploader :image, ImageUploader
 
   validates :original_text, :translated_text, presence: true
   validate :check_original_and_translated_text
