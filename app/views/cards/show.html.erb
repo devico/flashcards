@@ -3,11 +3,11 @@
   <div class="painting">
     <p id="notice"><%= notice %></p>
     <p><strong>Карточка создана</strong></p>
+    <p>Deck name: <%= @card.deck.name %></p>
     <p>Original text: <%= @card.original_text %></p>
     <p>Translated text: <%= @card.translated_text %></p>
     <p>Card image: </p>
     <%= image_tag @card.image_url(:thumb).to_s %>
-    <p>Created by: <%= @card.user.username %></p>
     <div class="actions">
       <%= link_to 'Назад', cards_path %>
       <%= link_to 'Редактировать', edit_card_path(@card) %>
