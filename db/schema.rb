@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20161127134941) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "current_deck"
+    t.integer  "current_deck_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

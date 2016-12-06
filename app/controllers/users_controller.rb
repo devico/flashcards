@@ -28,18 +28,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def update_current_deck
-    current_user.update(set_current_deck)
-  end
-
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck)
-  end
-
-  def set_current_deck
-    params.require(:user).permit(:current_deck)
+    params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck_id)
   end
 
 end

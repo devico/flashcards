@@ -4,11 +4,11 @@ class WelcomeController < ApplicationController
   end
 
   def review
-    if current_user
-      @card = Deck.find(current_user.current_deck).cards.sample
-    else
-      @card = Card.order("RANDOM()").first
-    end
+    @card = if current_user
+              current_user.current_deck.cards.order("RANDOM()").first
+            else
+              Card.order("RANDOM()").first
+            end
   end
 
   def check
