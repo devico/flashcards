@@ -22,16 +22,24 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to current_user
+      redirect_to root_path, notice: 'Your profile successfully updated'
     else
       render :edit
     end
   end
 
+  def update_current_deck
+    current_user.update(set_current_deck)
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :confirmation_password)
+    params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck)
+  end
+
+  def set_current_deck
+    params.require(:user).permit(:current_deck)
   end
 
 end

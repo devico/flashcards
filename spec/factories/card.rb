@@ -3,6 +3,8 @@ FactoryGirl.define do
     item.original_text 'cloud'
     item.translated_text 'oblako'
     item.review_date (Date.today + 3.days)
-    item.user_id 15
+    item.image 'minion.png'
+    item.deck_id 1
+    item.user_id 9
   end
 end

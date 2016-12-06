@@ -33,6 +33,9 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
           <ul class="nav navbar-nav">
+            <% if current_user %>
+              <li><%= link_to "Review", root_path %></li>
+            <% end %>
             <li><%= link_to 'Все карточки', cards_path %></li>
             <li><%= link_to 'Все колоды', decks_path %></li>
             <li><%= link_to 'Добавить колоду', new_deck_path %></li>

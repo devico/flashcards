@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-
+  before_action :require_login
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -25,6 +25,11 @@ class DecksController < ApplicationController
   def destroy
     @deck.destroy
     redirect_to decks_path
+  end
+
+  def set_current
+    current_user.update(current_deck: params[:id])
+    redirect_to root_path
   end
 
   private

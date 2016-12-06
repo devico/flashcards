@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   post 'welcome/check' => 'welcome#check'
+  put 'users/update_current_deck' => 'users#update_current_deck'
 
   get 'oauths/oauth'
   get 'oauths/callback'

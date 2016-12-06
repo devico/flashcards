@@ -29,7 +29,7 @@ RSpec.describe CardsController, :type => :controller do
 
     it "redirects to the card's page after create card" do
       post :create, card: { original_text: "Mister", translated_text: "парень" }
-      expect(response).to redirect_to("/cards/#{Card.last.id}")
+      expect(response).to redirect_to("/cards/#{Deck.cards.last.id}")
     end
 
     it "renders #new form when validates fail" do
