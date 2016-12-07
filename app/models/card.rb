@@ -1,9 +1,9 @@
 class Card < ApplicationRecord
 
-  belongs_to :user
+  belongs_to :deck
   mount_uploader :image, ImageUploader
 
-  validates :original_text, :translated_text, presence: true
+  validates :original_text, :translated_text, :deck_id, presence: true
   validate :check_original_and_translated_text
 
   def check_original_and_translated_text

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to current_user
+      redirect_to root_path, notice: 'Your profile successfully updated'
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :confirmation_password)
+    params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck_id)
   end
 
 end

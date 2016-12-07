@@ -1,0 +1,22 @@
+<section id="container">
+  <section>
+    <h4><%= @secret %></h4>
+    <table>
+      <thead>
+        Все колоды
+      </thead>
+      <tbody>
+        <% @decks.each do |deck| %>
+          <tr>
+            <td><%= deck.name %></td>
+            <td><%= link_to 'Показать', deck %></td>
+            <td><%=link_to 'Редактировать', edit_deck_path(deck) %></td>
+            <td><%= link_to 'Удалить', deck, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+  <br>
+  <%= render 'form_set_current'%>
+</section>

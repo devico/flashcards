@@ -1,0 +1,13 @@
+<section id="container">
+  <section>
+    <p id="notice"><%= notice %></p>
+    <p><strong>Колода создана</strong></p>
+    <p>Name of Deck: <%= @deck.name %></p>
+    <p>Created by: <%= @deck.user.username %></p>
+    <div class="actions">
+      <%= link_to 'Назад', decks_path %>
+      <%= link_to 'Редактировать', edit_deck_path(@deck) %>
+      <%= link_to 'Удалить', @deck, method: :delete, data: { confirm: 'Вы уверены?' } %>
+    </div>
+  </section>
+</section>

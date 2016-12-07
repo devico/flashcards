@@ -1,0 +1,6 @@
+<div>
+  <%= simple_form_for current_user, url: user_path(current_user), method: :put do |f| %>
+    <%= f.input :current_deck_id, label: "Установить текущей колоду:", collection: current_user.decks.map { |d| [d.name, d.id] },:include_blank => false %>
+    <%= f.submit 'Выбрать'%>
+  <% end %>
+</div>

@@ -3,6 +3,6 @@ FactoryGirl.define do
     item.username 'test_user '
     item.email 'tst@ex.ua'
     item.password '111'
-    item.id 15
+    item.id 9
   end
 end

@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-
+<%= f.input :deck_id, label: "Колода", collection: @decks.map { |d| [d.name, d.id] },:include_blank => false %>
   <%= f.input :original_text, label: 'Original text:' %>
   <%= f.input :translated_text , label: 'Translated text:' %>
   <%= f.input :image, as: :file, label: 'Card image:' %>

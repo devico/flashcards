@@ -11,9 +11,11 @@ class CardsController < ApplicationController
 
   def new
     @card = current_user.cards.new
+    @decks = current_user.decks
   end
 
   def edit
+    @decks = current_user.decks
   end
 
   def create
@@ -45,6 +47,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text, :image)
+    params.require(:card).permit(:original_text, :translated_text, :image, :deck_id)
   end
 end

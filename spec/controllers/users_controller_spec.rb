@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
 
+  before do
+    @user = FactoryGirl.create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+  end
+
   describe "#create" do
 
     it "redirects to the user's page after create user" do
@@ -17,14 +22,9 @@ RSpec.describe UsersController, :type => :controller do
 
   describe "#update" do
 
-    before do
-      @user = FactoryGirl.create(:user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-  end
-
     it "when change user" do
       patch :update, id: @user.id, user: { password: '456' }
-      expect(response).to redirect_to("/users/#{ @user.id }")
+      expect(response).to redirect_to("/")
     end
   end
 

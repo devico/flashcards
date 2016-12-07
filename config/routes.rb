@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :users
+  resources :sessions
+  resources :cards
+  resources :decks
 
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
   get "signup" => "users#new", :as => "signup"
 
-  resources :users
-  resources :sessions
-  resources :cards
   get 'welcome/index'
   post 'welcome/check' => 'welcome#check'
-
+  
   get 'oauths/oauth'
   get 'oauths/callback'
   post "oauth/callback" => "oauths#callback"

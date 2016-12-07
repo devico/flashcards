@@ -19,6 +19,7 @@ RSpec.describe CardsController, :type => :controller do
   describe "#show" do
 
     it "when card page select for preview" do
+      @deck = FactoryGirl.create(:deck)
       @card = FactoryGirl.create(:card)
       get :show, id: @card.id
       expect(response).to render_template(:show)
@@ -28,8 +29,9 @@ RSpec.describe CardsController, :type => :controller do
   describe "#create" do
 
     it "redirects to the card's page after create card" do
-      post :create, card: { original_text: "Mister", translated_text: "парень" }
-      expect(response).to redirect_to("/cards/#{Card.last.id}")
+      @deck = FactoryGirl.create(:deck)
+      post :create, card: { original_text: "Mister", translated_text: "парень", deck_id: @deck.id }
+      expect(response).to redirect_to("/cards/#{@deck.cards.last.id}")
     end
 
     it "renders #new form when validates fail" do
@@ -41,6 +43,7 @@ RSpec.describe CardsController, :type => :controller do
   describe "#update" do
 
     it "when change card" do
+      @deck = FactoryGirl.create(:deck)
       @card = FactoryGirl.create(:card)
       get :update, id: @card.id, card: {original_text: 'Gigacloud'}
       expect(response).to redirect_to("/cards/#{ @card.id }")
@@ -51,6 +54,7 @@ RSpec.describe CardsController, :type => :controller do
   describe "#destroy" do
 
     it "when card need to delete" do
+      @deck = FactoryGirl.create(:deck)      
       @card = FactoryGirl.create(:card)
       delete :destroy, id: @card.id
       expect(response).to redirect_to("/cards")
