@@ -1,14 +1,6 @@
 <section id="container">
   <section>
     <p id="notice"><%= notice %></p>
-    <% if current_user %>
-      <% if current_user.current_deck %>
-        <%= render 'form_review' %>
-      <% else %>
-        <%= render 'decks/form_set_current' %>
-      <% end %>
-    <% else %>
-      <%= render 'form_review' %>
-    <% end %>
+    <%= render 'form_review' %>
   </section>
 </section>

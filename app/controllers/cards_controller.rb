@@ -46,10 +46,6 @@ class CardsController < ApplicationController
     @card = current_user.cards.find(params[:id])
   end
 
-  def set_deck
-    @deck = current_user.decks.find(params[:deck_id])
-  end
-
   def card_params
     params.require(:card).permit(:original_text, :translated_text, :image, :deck_id)
   end

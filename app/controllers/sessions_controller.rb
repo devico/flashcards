@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    current_user.update(current_deck_id: nil)
     logout
     redirect_to welcome_index_url, :notice => "Logged out!"
   end
