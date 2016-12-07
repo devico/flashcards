@@ -3,12 +3,17 @@ class WelcomeController < ApplicationController
   def index
   end
 
+  # def review
+  #   @card = if current_user
+  #             current_user.current_deck.cards.order("RANDOM()").first
+  #           else
+  #             Card.order("RANDOM()").first
+  #           end
+  # end
+
   def review
-    @card = if current_user
-              current_user.current_deck.cards.order("RANDOM()").first
-            else
-              Card.order("RANDOM()").first
-            end
+    result = ReviewCard.call(user: current_user)
+    @card = result.card
   end
 
   def check
