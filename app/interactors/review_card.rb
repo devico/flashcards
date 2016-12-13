@@ -4,12 +4,12 @@ class ReviewCard
   def call
     context.card = if context.user
                      if context.user.current_deck
-                       context.user.current_deck.cards.order("RANDOM()").first
+                       context.user.current_deck.cards.where("review_date <= ?", Time.current).order("RANDOM()").first
                      else
-                       context.user.cards.order("RANDOM()").first
+                       context.user.cards.where("review_date <= ?", Time.current).order("RANDOM()").first
                      end
                    else
-                      Card.order("RANDOM()").first
+                      Card.where("review_date <= ?", Time.current).order("RANDOM()").first
                    end
   end
 end
