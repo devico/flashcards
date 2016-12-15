@@ -6,6 +6,7 @@ class CheckCard
     if card.original_text == context.user_text
       card.success_counter += 1
       card.fail_counter = 0
+      card.save
       date_for_review = case card.success_counter
                         when 1
                           12.hours.since
@@ -20,19 +21,16 @@ class CheckCard
                         else
                           1.year.since
                         end 
-      card.update(review_date: date_for_review)
+      card.update(review_date: date_for_review.to_s)
       context.message = "Правильно"
     else
       card.fail_counter += 1
       card.save
-      if card.success_counter >= 3 
-        if card.fail_counter == 3
+      if card.success_counter >= 3 && card.fail_counter == 3
           card.success_counter = 0
           card.update(review_date: 12.hours.since)
-        end
       end  
       context.fail!(message: "Не правильно")
-      
     end
   end
 end
