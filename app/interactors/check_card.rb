@@ -18,7 +18,7 @@ class CheckCard
         card.update(review_date: 12.hours.since, success_counter: 0)
       end
       context.card = card
-      context.fail!(message: "Не правильно")
+      context.message = "Не правильно"
     end
   end
 
