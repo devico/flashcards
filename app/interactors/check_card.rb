@@ -1,6 +1,6 @@
 class CheckCard
   include Interactor
-
+  
   def call
     @card = Card.find(context.card_id)
     if @card.original_text == context.user_text
@@ -15,8 +15,8 @@ class CheckCard
     @card.fail_counter = 0
     date_for_review = selection_delay(@card.success_counter)
     @card.update(review_date: date_for_review)
-    context.message = "Правильно"
     context.card = @card
+    context.message = "Правильно"
   end
 
   def incorrect_answer
@@ -24,8 +24,8 @@ class CheckCard
     if @card.success_counter >= 3 && @card.fail_counter == 3
       @card.update(review_date: 12.hours.since, success_counter: 0)
     end
+    context.card = @card    
     context.message = "Не правильно"
-    context.card = @card
   end
 
   def selection_delay(counter)
