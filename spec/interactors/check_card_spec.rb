@@ -36,9 +36,10 @@ describe CheckCard do
       end
 
       it "is valid when card is check for sixth time" do
-        card = FactoryGirl.create(:card, success_counter: 5)
-        result = CheckCard.call(card_id: card.id, user_text: "clean")
-        expect(result.card.review_date).to eq(Date.parse(1.year.since.to_s))
+       card = FactoryGirl.create(:card, success_counter: 5)
+       result = CheckCard.call(card_id: card.id, user_text: "clean")
+       expect(Card.find(result.card.id).success_counter).to eq(6)
+       expect(result.card.review_date).to eq(Date.parse(1.year.since.to_s))
       end
     end
 
