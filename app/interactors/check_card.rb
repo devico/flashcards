@@ -11,8 +11,7 @@ class CheckCard
   end
 
   def correct_answer
-    @card.success_counter += 1
-    @card.save
+    @card.increment!(:success_counter)
     @card.fail_counter = 0
     date_for_review = selection_delay(@card.success_counter)
     @card.update(review_date: date_for_review)
@@ -21,8 +20,7 @@ class CheckCard
   end
 
   def incorrect_answer
-    @card.fail_counter += 1
-    @card.save
+    @card.increment!(:fail_counter)
     if @card.success_counter >= 3 && @card.fail_counter == 3
       @card.update(review_date: 12.hours.since, success_counter: 0)
     end
