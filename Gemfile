@@ -17,6 +17,7 @@ gem 'sorcery'
 gem 'rails-controller-testing'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'damerau-levenshtein'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
