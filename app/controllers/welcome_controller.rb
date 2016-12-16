@@ -3,14 +3,6 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  # def review
-  #   @card = if current_user
-  #             current_user.current_deck.cards.order("RANDOM()").first
-  #           else
-  #             Card.order("RANDOM()").first
-  #           end
-  # end
-
   def review
     result = ReviewCard.call(user: current_user)
     @card = result.card
@@ -27,7 +19,7 @@ class WelcomeController < ApplicationController
   private
 
   def card_params
-    params.require(:check).permit(:card_id, :user_text, :image)
+    params.require(:check).permit(:card_id, :user_text, :image, :thumb)
   end
 
   def deck_params

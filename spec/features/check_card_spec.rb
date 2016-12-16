@@ -14,6 +14,6 @@ RSpec.feature "Card check", :type => :feature do
     fill_in 'Enter original text', with: 'clean'
     click_button 'Save Check'
 
-    expect(page).to have_text('Правильно')
+    expect(page).to have_text("Правильно")
   end
 end

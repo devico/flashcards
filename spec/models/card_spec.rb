@@ -36,7 +36,7 @@ describe Card do
 
       it "when original text equal translated text" do
         card = Card.new(original_text: "Next", translated_text: "следующий", user_id: 5, deck_id: 20)
-        expect(card.set_review_date).to eq(Date.today + 3.days)
+        expect(card.set_review_date).to eq(Date.today)
       end
 
    end
