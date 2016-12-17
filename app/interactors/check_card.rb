@@ -14,14 +14,10 @@ class CheckCard
   end
 
   def typo_check
-    if @card.original_text.size > 3
       dl = DamerauLevenshtein.distance(@card.original_text, context.user_text)
-      level_pass = 0.5
+      level_pass = 0.15
       check_pass = dl.to_f / @card.original_text.size.to_f
       check_pass <= level_pass
-    else
-      return false
-    end
   end
 
   def correct_answer
