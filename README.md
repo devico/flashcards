@@ -1,5 +1,7 @@
 # README
 
+[![Code Climate](https://codeclimate.com/repos/585546df7ff45f00530022c4/badges/b135424ec8798c2cc350/gpa.svg)](https://codeclimate.com/repos/585546df7ff45f00530022c4/feed)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
