@@ -47,7 +47,7 @@ describe CheckCard do
 
       it "is valid when check failed" do
         card = FactoryGirl.create(:card, success_counter: 4, fail_counter: 2)
-        result = CheckCard.call(card_id: card.id, user_text: "klean")
+        result = CheckCard.call(card_id: card.id, user_text: "klin")
         expect(result.card.success_counter).to eq(0)
         expect(result.card.review_date).to eq(Date.parse(12.hours.since.to_s))
       end

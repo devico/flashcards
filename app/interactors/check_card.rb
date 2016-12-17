@@ -1,13 +1,23 @@
 class CheckCard
   include Interactor
+  require 'damerau-levenshtein'
   
   def call
     @card = Card.find(context.card_id)
     if @card.original_text == context.user_text
-      correct_answer  
-    else
+      correct_answer
+    elsif typo_check
+      typo_answer
+    else 
       incorrect_answer
     end
+  end
+
+  def typo_check
+      dl = DamerauLevenshtein.distance(@card.original_text, context.user_text)
+      level_pass = 0.15
+      check_pass = dl.to_f / @card.original_text.size.to_f
+      check_pass <= level_pass
   end
 
   def correct_answer
@@ -17,6 +27,11 @@ class CheckCard
     @card.update(review_date: date_for_review)
     context.card = @card
     context.message = "Правильно"
+  end
+
+  def typo_answer
+    correct_answer
+    context.message = "Вы сделали опечатку! Оригинал: #{@card.original_text}. Перевод: #{@card.translated_text}. Вы ввели: #{context.user_text}"
   end
 
   def incorrect_answer
