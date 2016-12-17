@@ -1,8 +1,8 @@
-JavaScript: true
-Ruby: true
-Python: false
-PHP: false
-
+languages:
+  Ruby: true
+engines:
+  rubocop:
+    enabled: true
 exclude_paths:
 - spec/**/*
 - vendor/**/*
