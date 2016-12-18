@@ -14,7 +14,7 @@ class DecksController < ApplicationController
   end
 
   def create
-   @deck = current_user.decks.new(params_deck)
+    @deck = current_user.decks.new(params_deck)
       if @deck.save
         redirect_to decks_path, notice: 'The Deck successfull created!'
       else

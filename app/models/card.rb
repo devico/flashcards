@@ -1,5 +1,4 @@
 class Card < ApplicationRecord
-
   belongs_to :deck
   mount_uploader :image, ImageUploader
 
@@ -7,9 +6,8 @@ class Card < ApplicationRecord
   validate :check_original_and_translated_text
 
   def check_original_and_translated_text
-    if UnicodeUtils.downcase(original_text.strip) == UnicodeUtils.downcase(translated_text.strip)
+    return unless UnicodeUtils.downcase(original_text.strip) == UnicodeUtils.downcase(translated_text.strip)
       errors.add(:base, "original and translated text can’t be same")
-    end
   end
 
   before_create :set_review_date

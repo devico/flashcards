@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
   end
 
@@ -11,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to welcome_index_url, :notice => "Welcome to Flashcards!"
+      redirect_to welcome_index_url, notice: "Welcome to Flashcards!"
     else
       render :new
     end
@@ -33,5 +32,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck_id)
   end
-
 end

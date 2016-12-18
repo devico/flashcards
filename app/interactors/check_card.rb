@@ -1,7 +1,7 @@
 class CheckCard
   include Interactor
   require 'damerau-levenshtein'
-  
+
   def call
     @card = Card.find(context.card_id)
     if @card.original_text == context.user_text
@@ -14,10 +14,10 @@ class CheckCard
   end
 
   def typo_check
-      dl = DamerauLevenshtein.distance(@card.original_text, context.user_text)
-      level_pass = 0.15
-      check_pass = dl.to_f / @card.original_text.size.to_f
-      check_pass <= level_pass
+    dl = DamerauLevenshtein.distance(@card.original_text, context.user_text)
+    level_pass = 0.15
+    check_pass = dl.to_f / @card.original_text.size.to_f
+    check_pass <= level_pass
   end
 
   def correct_answer
@@ -39,7 +39,7 @@ class CheckCard
     if @card.success_counter >= 3 && @card.fail_counter == 3
       @card.update(review_date: 12.hours.since, success_counter: 0)
     end
-    context.card = @card    
+    context.card = @card
     context.message = "Не правильно"
   end
 
@@ -57,6 +57,6 @@ class CheckCard
       1.month.since
     else
       1.year.since
-    end 
+    end
   end
 end
