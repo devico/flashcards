@@ -8,6 +8,5 @@ engines:
   - app/**
   - lib/**
   - "**.rb"
-  - "**.go"
 exclude_paths:
   app/assets/**
