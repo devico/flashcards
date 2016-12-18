@@ -20,11 +20,11 @@ class CardsController < ApplicationController
 
   def create
     @card = current_user.cards.new(card_params)
-      if @card.save
-        redirect_to @card
-      else
-        render :new
-      end
+    if @card.save
+      redirect_to @card
+    else
+      render :new
+    end
   end
 
   def update

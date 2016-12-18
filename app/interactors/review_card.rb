@@ -23,7 +23,6 @@ class ReviewCard
 
   def cards_current_deck
     context.user.current_deck.cards.where("review_date <= ?", Time.current).order("RANDOM()").first
-
   end
 
   def all_cards_user

@@ -13,13 +13,11 @@ class OauthsController < ApplicationController
   end
 
   def fail_login_provider
-    begin
-      @user = create_from(provider)
-      reset_session
-      redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
-    rescue
-      redirect_to root_path, alert: "Failed to login from #{provider.titleize}!"
-    end
+    @user = create_from(provider)
+    reset_session
+    redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+  rescue StandardError => e
+    redirect_to root_path, alert: "Failed to login from #{provider.titleize}!"
   end
 
   private

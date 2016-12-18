@@ -8,7 +8,7 @@ class CheckCard
       correct_answer
     elsif typo_check
       typo_answer
-    else 
+    else
       incorrect_answer
     end
   end
