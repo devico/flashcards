@@ -2,6 +2,8 @@
 
 <a href="https://codeclimate.com/repos/585546df7ff45f00530022c4/feed"><img src="https://codeclimate.com/repos/585546df7ff45f00530022c4/badges/b135424ec8798c2cc350/gpa.svg" /></a>
 
+<a href="https://codeclimate.com/repos/585546df7ff45f00530022c4/coverage"><img src="https://codeclimate.com/repos/585546df7ff45f00530022c4/badges/b135424ec8798c2cc350/coverage.svg" /></a>
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
