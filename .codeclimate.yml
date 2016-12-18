@@ -3,10 +3,10 @@ languages:
 engines:
   rubocop:
     enabled: true
- ratings:
+ratings:
   paths:
   - app/**
   - lib/**
   - "**.rb"
 exclude_paths:
-  app/assets/**
+- "app/assets/**/*"
