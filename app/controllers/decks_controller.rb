@@ -15,11 +15,11 @@ class DecksController < ApplicationController
 
   def create
     @deck = current_user.decks.new(params_deck)
-      if @deck.save
-        redirect_to decks_path, notice: 'The Deck successfull created!'
-      else
-        render :new
-      end
+    if @deck.save
+      redirect_to decks_path, notice: 'The Deck successfull created!'
+    else
+      render :new
+    end
   end
 
   def destroy
