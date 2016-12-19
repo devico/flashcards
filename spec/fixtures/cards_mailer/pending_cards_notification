@@ -1,0 +1,3 @@
+CardsMailer#pending_cards_notification
+
+Hi, find me in app/views/cards_mailer/pending_cards_notification
