@@ -5,16 +5,10 @@ RSpec.describe CardsMailer, type: :mailer do
     let(:mail) { CardsMailer.pending_cards_notification }
     let(:user) { User.create(username: 'devico', email: 'devico@example.com') }
 
-    it 'renders the subject' do
-      expect(mail.subject).to eq('Remind')
-    end
-
-    it 'renders the receiver email' do
+    it "renders the headers" do
+      expect(mail.subject).to eq("New cards for review on Flashcards")
       expect(mail.to).to eq([user.email])
-    end
-
-    it 'renders the sender email' do
-      expect(mail.from).to eq(['gregaroyo@gmail.com'])
+      expect(mail.from).to eq(["gregaroyo@gmail.com"])
     end
 
     it "renders the body" do
