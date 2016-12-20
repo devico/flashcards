@@ -1,5 +1,5 @@
 class CardsMailer < ApplicationMailer
-  default from: "flashcards@example.org"
+  default from: "gregaroyo@gmail.com"
 
   def pending_cards_notification
     users = Card.where("review_date <= ?", Time.current)
