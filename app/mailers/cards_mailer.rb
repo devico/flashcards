@@ -10,7 +10,7 @@ class CardsMailer < ApplicationMailer
       @user = User.find(id)
       mail(
         to: @user.email,
-        subject: "New cards for review on Flashcards",
+        subject: "Remind",
         body: "We remind you that you have a card to review"
       )
     end
