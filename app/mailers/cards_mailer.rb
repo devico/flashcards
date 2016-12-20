@@ -1,3 +1,4 @@
+# This is class Mailer for send reminders to users
 class CardsMailer < ApplicationMailer
   default from: "gregaroyo@gmail.com"
 
