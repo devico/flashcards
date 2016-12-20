@@ -12,7 +12,7 @@ RSpec.describe CardsMailer, type: :mailer do
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("We remind you that you have a card to review")
+      expect(mail.body).to match("We remind you that you have a card to review")
     end
   end
 end
