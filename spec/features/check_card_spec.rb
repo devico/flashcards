@@ -7,7 +7,8 @@ RSpec.feature "Card check", :type => :feature do
     deck = FactoryGirl.create(:deck)
     @card = Card.create(original_text: 'clean',
                         translated_text: 'чистый',
-                        image: 'minion.png')
+                        image: 'minion.png',
+                        review_date: Date.today)
   end
 
   scenario "successfully checks card" do
