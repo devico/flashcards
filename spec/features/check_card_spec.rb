@@ -5,7 +5,7 @@ RSpec.feature "Card check", :type => :feature do
   before do
     user = FactoryGirl.create(:user)
     deck = FactoryGirl.create(:deck)
-    card = Card.create(original_text: 'clean', 
+    @card = Card.create(original_text: 'clean', 
                        translated_text: 'чистый', 
                        image: 'minion.png'
                 )
