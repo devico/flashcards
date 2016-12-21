@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe CardsMailer, type: :mailer do
   describe "pending_cards_notification" do
-    let(:mail) { CardsMailer.pending_cards_notification }
+    let(:mail) { CardsMailer.pending_cards_notification(user) }
     let(:user) { User.create(username: 'devico', email: 'devico@example.com') }
 
     it "renders the headers" do
