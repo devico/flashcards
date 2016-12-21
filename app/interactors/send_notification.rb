@@ -1,3 +1,4 @@
+# class for call email notifications
 class SendNotification
   include Interactor
   def call
