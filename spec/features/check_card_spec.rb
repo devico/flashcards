@@ -9,7 +9,7 @@ RSpec.feature "Card check", :type => :feature do
                         translated_text: 'чистый',
                         image: 'minion.png',
                         user_id: @user.id,
-                        deck_id: @deck.id,  
+                        deck_id: @deck.id,
                         review_date: Date.today)
     sign_up(@user.username, @user.password)
   end
