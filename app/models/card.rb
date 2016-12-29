@@ -7,7 +7,7 @@ class Card < ApplicationRecord
 
   def check_original_and_translated_text
     return unless UnicodeUtils.downcase(original_text.strip) == UnicodeUtils.downcase(translated_text.strip)
-    errors.add(:base, "original and translated text can’t be same")
+    errors.add(:base, t('cards.error_base'))
   end
 
   before_create :set_review_date

@@ -1,9 +1,9 @@
 <section id="container">
   <section>
     <p style="font-size: 22px;">
-      Новая колода
+      <%= t('decks.new_deck') %>
     </p>
     <%= render 'form' %>
-    <p><%= link_to 'Назад к колодам', decks_path %></p>
+    <p><%= link_to t('forms.links.back'), decks_path %></p>
   </section>
 </section>

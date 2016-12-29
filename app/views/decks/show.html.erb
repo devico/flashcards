@@ -1,13 +1,13 @@
 <section id="container">
   <section>
     <p id="notice"><%= notice %></p>
-    <p><strong>Колода создана</strong></p>
-    <p>Name of Deck: <%= @deck.name %></p>
+    <p><strong><%= t('decks.notice_create')%></strong></p>
+    <p><%= t('decks.name') @deck.name %></p>
     <p>Created by: <%= @deck.user.username %></p>
     <div class="actions">
-      <%= link_to 'Назад', decks_path %>
-      <%= link_to 'Редактировать', edit_deck_path(@deck) %>
-      <%= link_to 'Удалить', @deck, method: :delete, data: { confirm: 'Вы уверены?' } %>
+      <%= link_to t('forms.links.back'), decks_path %>
+      <%= link_to t('decks.edit_deck'), edit_deck_path(@deck) %>
+      <%= link_to t('decks.delete_deck'), @deck, method: :delete, data: { confirm: t('forms.links.confirm') } %>
     </div>
   </section>
 </section>

@@ -1,6 +1,6 @@
 <section id="container">
   <section>
-    <h1>Sign Up</h1>
+    <h1><%= t('user.signup')%></h1>
 
     <%= simple_form_for @user do |f| %>
       <% if @user.errors.any? %>
@@ -14,16 +14,19 @@
         </div>
       <% end %>
       <div class="field">
-        <%= f.input :username, label: 'Username:' %>
+        <%= f.input :username, label: t('user.name') %>
       </div>
       <div class="field">
-        <%= f.input :email, label: 'Email:' %>
+        <%= f.input :email, label: t('user.email') %>
       </div>
       <div class="field">
-        <%= f.input :password, label: 'Password:' %>
+        <%= f.input :password, label: t('user.password') %>
       </div>
       <div class="field">
-        <%= f.input :password_confirmation, label: 'Confirm password:' %>
+        <%= f.input :password_confirmation, label: t('user.confirm_password') %>
+      </div>
+      <div class="field">
+        <%= f.input :locale, as: :select, collection: I18n.available_locales %>
       </div>
       <div class="actions"><%= f.submit %></div>
     <% end %>

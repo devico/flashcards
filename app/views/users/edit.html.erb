@@ -1,6 +1,6 @@
 <section id="container">
   <section>
-    <h1>Edit profile</h1>
+    <h1><%= t('user.edit_profile')%></h1>
 
     <%= simple_form_for current_user do |f| %>
       <% if current_user.errors.any? %>
@@ -13,9 +13,10 @@
             </ul>
         </div>
       <% end %>
-      <%= f.input :email, label: 'Email:' %>
-      <%= f.input :password , label: 'Password:' %>
-      <%= f.input :password_confirmation, label: 'Confirm password:' %>
+      <%= f.input :email, label: t('user.email') %>
+      <%= f.input :password , label: t('user.password') %>
+      <%= f.input :password_confirmation, label: t('user.confirm_password') %>
+      <%= f.input :locale, as: :select, collection: I18n.available_locales %>
       <%= f.submit %>
     <% end %>
   </section>

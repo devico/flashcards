@@ -26,12 +26,12 @@ class CheckCard
     date_for_review = selection_delay(@card.success_counter)
     @card.update(review_date: date_for_review)
     context.card = @card
-    context.message = "Правильно"
+    context.message = t('app.check_card.correct_answer')
   end
 
   def typo_answer
     correct_answer
-    context.message = "Вы сделали опечатку! Оригинал: #{@card.original_text}. Перевод: #{@card.translated_text}. Вы ввели: #{context.user_text}"
+    context.message = t('app.check_card.typo_answer_first') @card.original_text t('app.check_card.typo_answer_second') @card.translated_text t('app.check_card.typo_answer_third') context.user_text
   end
 
   def incorrect_answer
@@ -40,7 +40,7 @@ class CheckCard
       @card.update(review_date: 12.hours.since, success_counter: 0)
     end
     context.card = @card
-    context.message = "Не правильно"
+    context.message = t('app.check_card.incorrect_answer')
   end
 
   def selection_delay(counter)

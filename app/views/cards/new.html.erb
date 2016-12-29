@@ -1,9 +1,9 @@
 <section id="container">
   <section>
     <p style="font-size: 22px;">
-      Новая карточка
+      <%= t('cards.new_card') %>
     </p>
     <%= render 'form' %>
-    <p><%= link_to 'Назад к карточкам', cards_path %></p>
+    <p><%= link_to t('forms.links.back'), cards_path %></p>
   </section>
 </section>

@@ -1,0 +1,73 @@
+ru:
+  forms:
+    labels:
+      deck:
+        name: "Имя колоды:"
+        current: "Выберите колоду по умолчанию"
+      welcome:
+        no_cards: "Нет карточек для просмотра"
+        original_text: "Введите оригинальный текст"
+    actions:
+      card:
+        submit: "Создать карточку"
+      deck:
+        submit: "Выбрать"
+      update: "Проверить карточку"
+    links:
+      show: "Показать"
+      back: "Назад"
+      edit: "Редактировать"
+      delete: "Удалить"
+      confirm: "Вы уверены?"
+  app:
+    name: "Флешкарточкер"
+    review: "Просмотр"
+    title: "Первый в мире удобный менеджер флешкарточек. Именно так"
+    not_auth_alert: "Первая попытка входа на страницу"
+    check_card:
+      correct_answer: "Правильно"
+      incorrect_answer: "Не правильно"
+      typo_answer_first: "Вы сделали опечатку! Оригинал: "
+      typo_answer_second: ". Перевод: "      
+      typo_answer_third: ". Вы ввели: "
+  cards:
+    all_cards: "Все карточки"
+    original_text: "Оригинальный текст"
+    translated_text: "Переводной текст"
+    review_date: "Дата просмотра"
+    image: "Изображение"
+    name: "Карточка"
+    delete_card: "Удалить карточку"
+    new_card: "Новая карточка"
+    add_card: "Добавить карточку"
+    edit_card: "Редактировать карточку"
+    notice_create: "Карточка успешно создана"
+    error_base: "оригинальный текст и текст перевода не должны совпадать"
+  decks:
+    all_decks: "Все колоды"
+    new_deck: "Новая колода"
+    add_deck: "Добавить кододу"
+    name: "Имя колоды: "
+    edit_deck: "Редактировать колоду"
+    delete_deck: "Удалить колоду"
+    notice_create: "Колода создана"
+  sessions:
+    username: "Имя пользователя: "
+    password: "Пароль: "
+    login: "Войти"
+    notice_create_success: "Вы вошли "
+    notice_create_fail: "Имя пользователя или пароль неверны"
+    notice_destroy: "Вы вышли"
+  user:
+    name: "Имя пользователя: "
+    email: "Email: "
+    password: "Пароль: "
+    confirm_password: "Подтвердите пароль: "
+    edit_profile: "Редактировать профиль"
+    logout: "Выйти"
+    logged: "Вы вошли как"
+    signup: "Регистрация"
+    signin: "Войти"
+    login_twitter: "Войти через Twitter"
+    notice_create: "Добро пожаловать в Флешкарточкер!"
+    notice_update: "Ваш профиль успешно обновлен"

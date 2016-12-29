@@ -5,7 +5,7 @@
       <%= current_user.username %>
       <%= current_user.email %>
     </p>
-    <%= link_to 'Редактировать', edit_user_path(current_user) %>
-    <%= link_to 'Назад', welcome_index_path %>
+    <%= link_to t('user.edit_profile'), edit_user_path(current_user) %>
+    <%= link_to t('forms.links.back'), welcome_index_path %>
   </section>
 </section>

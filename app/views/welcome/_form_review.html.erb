@@ -4,9 +4,9 @@
     <%= f.label @card.translated_text %>
     <hr>
     <%= f.input :card_id, as: :hidden, input_html: { value: @card.id } %>
-    <%= f.input :user_text, label: 'Enter original text' %>
+    <%= f.input :user_text, label: t('forms.labels.welcome.original_text') %>
     <%= f.submit %>
   <% end %>
 <%  else %>
-  <p>Нет карточек для просмотра</p>
+  <p>Н<%= t('forms.labels.welcome.no_cards') %></p>
 <% end %>

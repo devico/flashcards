@@ -9,12 +9,12 @@
       </ul>
     </div>
   <% end %>
-<%= f.input :deck_id, label: "Колода", collection: @decks.map { |d| [d.name, d.id] },:include_blank => false %>
+<%= f.input :deck_id, label: t('decks.name'), collection: @decks.map { |d| [d.name, d.id] },:include_blank => false %>
   <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-  <%= f.input :original_text, label: 'Original text:' %>
-  <%= f.input :translated_text , label: 'Translated text:' %>
-  <%= f.input :review_date, as: :date, label: 'Review date:', input_html: {class: "medium-12 columns"} %>
-  <%= f.input :image, as: :file, label: 'Card image:' %>
+  <%= f.input :original_text, label: t('cards.original_text') %>
+  <%= f.input :translated_text , label: t('cards.translated_text') %>
+  <%= f.input :review_date, as: :date, label: t('cards.review_date'), input_html: {class: "medium-12 columns"} %>
+  <%= f.input :image, as: :file, label: t('cards.image') %>
 
   <%= f.submit %>
 <% end %>
