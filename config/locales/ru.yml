@@ -8,17 +8,24 @@ ru:
         no_cards: "Нет карточек для просмотра"
         original_text: "Введите оригинальный текст"
     actions:
-      card:
-        submit: "Создать карточку"
-      deck:
-        submit: "Выбрать"
-      update: "Проверить карточку"
+      review: "Проверить карточку"
     links:
       show: "Показать"
       back: "Назад"
       edit: "Редактировать"
       delete: "Удалить"
       confirm: "Вы уверены?"
+  helpers:
+    submit:
+      card:
+        create: "Создать %{model}"
+        update: "Обновить %{model}"
+      deck:
+        create: "Создать %{model}"
+        update: "Обновить %{model}"
+      user:
+        create: "Регистрация"
+        update: "Сохранить изменения"
   app:
     name: "Флешкарточкер"
     review: "Просмотр"
@@ -65,7 +72,7 @@ ru:
     confirm_password: "Подтвердите пароль: "
     edit_profile: "Редактировать профиль"
     logout: "Выйти"
-    logged: "Вы вошли как"
+    logged: "Вы вошли как "
     signup: "Регистрация"
     signin: "Войти"
     login_twitter: "Войти через Twitter"
