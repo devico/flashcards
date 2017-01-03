@@ -2,7 +2,6 @@ en:
   forms:
     labels:
       deck:
-        name: "Name of deck:"
         current: "Select deck by default"
       welcome:
         no_cards: "No cards for review"
@@ -37,27 +36,37 @@ en:
       typo_answer_first: "You made a typo! Original: "
       typo_answer_second: ". Translate: "
       typo_answer_third: ". You input: "
+  activerecord:
+    attributes:
+      card:
+        original_text: "Original text"
+        translated_text: "Translated text"
+        review_date: "Review date"
+      deck:
+        name: "Deck name"
+      user:
+        username: "User name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        locale: "Locale"
   cards:
-    all_cards: "All cards"
-    original_text: "Original text"
-    translated_text: "Translated text"
-    review_date: "Review date"
+    all: "All cards"
     image: "Image"
     name: "Card"
-    delete_card: "Delete card"
-    new_card: "New card"
-    add_card: "Add card"
-    edit_card: "Edit card"
-    notice_create: "Card is created"
+    delete: "Delete card"
+    new: "New card"
+    add: "Add card"
+    edit: "Edit card"
+    notice: "Card is created"
     error_base: "original and translated text can’t be same"
   decks:
-    all_decks: "All decks"
-    new_deck: "New deck"
-    add_deck: "Add deck"
-    name: "Name of Deck:"
-    edit_deck: "Edit deck"
-    delete_deck: "Delete deck"
-    notice_create: "The Deck successfull created!"
+    all: "All decks"
+    new: "New deck"
+    add: "Add deck"
+    edit: "Edit deck"
+    delete: "Delete deck"
+    notice: "The Deck successfull created!"
   sessions:
     username: "User name: "
     password: "Password: "
@@ -66,11 +75,7 @@ en:
     notice_create_fail: "Username or password was invalid"
     notice_destroy: "Logged out!"
   user:
-    name: "Username: "
-    email: "Email: "
-    password: "Password: "
-    confirm_password: "Confirm password: "
-    edit_profile: "Edit Profile"
+    edit: "Edit Profile"
     logout: "Log out"
     logged: "Logged in as "
     signup: "Sign up"

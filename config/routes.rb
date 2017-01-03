@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  scope :path => ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  #  scope :path => ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  # scope "/:locale" do
+  scope :path => "/:locale" do
     resources :users
     resources :sessions
     resources :cards

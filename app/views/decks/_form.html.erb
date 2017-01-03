@@ -10,6 +10,6 @@
     </div>
   <% end %>
 
-  <%= f.input :name, label: t('forms.labels.deck.name') %>
+  <%= f.input :name, label: Deck.human_attribute_name(:name) %>
   <%= f.submit %>
 <% end %>

@@ -1,8 +1,11 @@
 <section id="container">
   <section>
     <p id="notice"><%= notice %></p>
-    <p><strong><%= t('decks.notice_create')%></strong></p>
-    <p><%= t('decks.name') @deck.name %></p>
+    <p><strong><%= t('decks.notice')%></strong></p>
+    <p>
+      <%= @deck.name %>
+      <%= Deck.human_attribute_name(:name) %>    
+    </p>
     <p>Created by: <%= @deck.user.username %></p>
     <div class="actions">
       <%= link_to t('forms.links.back'), decks_path %>

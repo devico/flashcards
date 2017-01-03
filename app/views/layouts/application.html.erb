@@ -24,7 +24,6 @@
         <% end %>
       </div>
       <div class="col-lg-3">
-        Language:
         <%= link_to_unless_current "English", locale: "en" %> |
         <%= link_to_unless_current "Russian", locale: "ru" %>
       </div>
@@ -44,10 +43,10 @@
             <% if current_user %>
               <li><%= link_to t('app.review'), root_path %></li>
             <% end %>
-            <li><%= link_to t('cards.all_cards'), cards_path %></li>
-            <li><%= link_to t('decks.all_decks'), decks_path %></li>
-            <li><%= link_to t('decks.add_deck'), new_deck_path %></li>
-            <li><%= link_to t('cards.add_card'), new_card_path %></li>
+            <li><%= link_to t('cards.all'), cards_path %></li>
+            <li><%= link_to t('decks.all'), decks_path %></li>
+            <li><%= link_to t('decks.add'), new_deck_path %></li>
+            <li><%= link_to t('cards.add'), new_card_path %></li>
           </ul>
         </div>
       </div>

@@ -14,16 +14,16 @@
         </div>
       <% end %>
       <div class="field">
-        <%= f.input :username, label: t('user.name') %>
+        <%= f.input :username, label: User.human_attribute_name(:username) %>
       </div>
       <div class="field">
-        <%= f.input :email, label: t('user.email') %>
+        <%= f.input :email, label: User.human_attribute_name(:email) %>
       </div>
       <div class="field">
-        <%= f.input :password, label: t('user.password') %>
+        <%= f.input :password, label: User.human_attribute_name(:password) %>
       </div>
       <div class="field">
-        <%= f.input :password_confirmation, label: t('user.confirm_password') %>
+        <%= f.input :password_confirmation, label: User.human_attribute_name(:password_confirmation) %>
       </div>
       <div class="field">
         <%= f.input :locale, as: :select, collection: I18n.available_locales %>

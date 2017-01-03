@@ -2,7 +2,6 @@ ru:
   forms:
     labels:
       deck:
-        name: "Имя колоды:"
         current: "Выберите колоду по умолчанию"
       welcome:
         no_cards: "Нет карточек для просмотра"
@@ -37,27 +36,37 @@ ru:
       typo_answer_first: "Вы сделали опечатку! Оригинал: "
       typo_answer_second: ". Перевод: "      
       typo_answer_third: ". Вы ввели: "
+  activerecord:
+    attributes:
+      card:
+        original_text: "Оригинальный текст"
+        translated_text: "Перевод текста"
+        review_date: "Дата просмотра"
+      deck:
+        name: "Название колоды"
+      user:
+        username: "Имя пользователя"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        locale: "Локализация"
   cards:
-    all_cards: "Все карточки"
-    original_text: "Оригинальный текст"
-    translated_text: "Переводной текст"
-    review_date: "Дата просмотра"
+    all: "Все карточки"
     image: "Изображение"
     name: "Карточка"
-    delete_card: "Удалить карточку"
-    new_card: "Новая карточка"
-    add_card: "Добавить карточку"
-    edit_card: "Редактировать карточку"
-    notice_create: "Карточка успешно создана"
+    delete: "Удалить карточку"
+    new: "Новая карточка"
+    add: "Добавить карточку"
+    edit: "Редактировать карточку"
+    notice: "Карточка успешно создана"
     error_base: "оригинальный текст и текст перевода не должны совпадать"
   decks:
-    all_decks: "Все колоды"
-    new_deck: "Новая колода"
-    add_deck: "Добавить кододу"
-    name: "Имя колоды: "
-    edit_deck: "Редактировать колоду"
-    delete_deck: "Удалить колоду"
-    notice_create: "Колода создана"
+    all: "Все колоды"
+    new: "Новая колода"
+    add: "Добавить кододу"
+    edit: "Редактировать колоду"
+    delete: "Удалить колоду"
+    notice: "Колода создана"
   sessions:
     username: "Имя пользователя: "
     password: "Пароль: "
@@ -66,11 +75,7 @@ ru:
     notice_create_fail: "Имя пользователя или пароль неверны"
     notice_destroy: "Вы вышли"
   user:
-    name: "Имя пользователя: "
-    email: "Email: "
-    password: "Пароль: "
-    confirm_password: "Подтвердите пароль: "
-    edit_profile: "Редактировать профиль"
+    edit: "Редактировать профиль"
     logout: "Выйти"
     logged: "Вы вошли как "
     signup: "Регистрация"
