@@ -31,7 +31,7 @@ RSpec.describe CardsController, :type => :controller do
     it "redirects to the card's page after create card" do
       @deck = FactoryGirl.create(:deck)
       post :create, card: { original_text: "Mister", translated_text: "парень", deck_id: @deck.id }
-      expect(response).to redirect_to("/cards/#{@deck.cards.last.id}")
+      expect(response).to redirect_to("/en/cards/#{@deck.cards.last.id}")
     end
 
     it "renders #new form when validates fail" do
@@ -46,7 +46,7 @@ RSpec.describe CardsController, :type => :controller do
       @deck = FactoryGirl.create(:deck)
       @card = FactoryGirl.create(:card)
       get :update, id: @card.id, card: {original_text: 'Gigacloud'}
-      expect(response).to redirect_to("/cards/#{ @card.id }")
+      expect(response).to redirect_to("/en/cards/#{ @card.id }")
     end
   end
 
@@ -57,7 +57,7 @@ RSpec.describe CardsController, :type => :controller do
       @deck = FactoryGirl.create(:deck)      
       @card = FactoryGirl.create(:card)
       delete :destroy, id: @card.id
-      expect(response).to redirect_to("/cards")
+      expect(response).to redirect_to("/en/cards")
     end
   end
 end

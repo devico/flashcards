@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     accept_locale = http_accept_language.compatible_language_from(I18n.available_locales)
     locale = if current_user
                current_user.locale
-             elsif params_locale 
+             elsif params_locale
                session_locale = params_locale
              elsif session_locale
                session_locale

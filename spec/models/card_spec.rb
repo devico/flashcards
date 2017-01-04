@@ -8,11 +8,11 @@ describe Card do
   describe '#check_original_and_translated_text' do
 
     it "is valid when the texts are not the same" do
-      expect(Card.new(original_text: "House", translated_text: "дом", user_id: 5, deck_id: 20)).to be_valid
+      expect(Card.new(original_text: "House", translated_text: "дом", user_id: 10, deck_id: 20)).to be_valid
     end
 
     it "is not valid when the texts are identical" do
-      expect(Card.new(original_text: "Дом", translated_text: " дом", user_id: 5, deck_id: 20)).to_not be_valid
+      expect(Card.new(original_text: "House", translated_text: " house", user_id: 10, deck_id: 20)).to_not be_valid
     end
 
     it "is not valid when original_text is nil" do

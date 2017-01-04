@@ -18,16 +18,16 @@ RSpec.feature "Card check", :type => :feature do
     visit root_path
 
     fill_in 'Enter original text', with: @card.original_text
-    click_button 'Save Check'
+    click_button 'Check card'
 
-    expect(page).to have_text("Правильно")
+    expect(page).to have_text("Correctly")
   end
 
   def sign_up(name, password)
-    visit '/users/new'
-    fill_in 'Username', with: name
+    visit '/users/new?locale=en'
+    fill_in 'User name', with: name
     fill_in 'Password', with: password
     fill_in 'Confirm password', with: password
-    click_button 'Create User'
+    click_button 'Register'
   end
 end

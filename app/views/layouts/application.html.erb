@@ -15,7 +15,7 @@
       <% if current_user %>
         <%= t('user.logged') %>
         <%= current_user.username %>
-        <%= link_to t('user.edit_profile'), edit_user_path(current_user.id) %>
+        <%= link_to t('user.edit'), edit_user_path(current_user.id) %>
         <%= link_to t('user.logout'), logout_path %>
       <% else %>
         <%= link_to t('user.signup'), signup_path %>

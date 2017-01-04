@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope path: "/:locale" do
+  scope "(:locale)" do
     resources :users
     resources :sessions
     resources :cards
