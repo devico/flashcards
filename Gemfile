@@ -7,6 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 # Use rubocop
 gem 'rubocop', require: false
+gem 'http_accept_language'
 gem 'dotenv-rails', groups: [:development, :test]
 # Use simple-form
 gem 'simple_form'
@@ -19,7 +20,6 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'damerau-levenshtein'
 gem 'whenever', require: false
-gem 'http_accept_language'
 gem 'rails-i18n'
 gem "letter_opener", group: :development
 # Use Puma as the app server

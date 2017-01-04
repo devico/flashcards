@@ -3,6 +3,12 @@ languages:
 engines:
   rubocop:
     enabled: true
+    checks:
+      Rubocop/Style/NumericLiterals:
+        enabled: false
+      Rubocop/Style/Documentation:
+        enabled: false
+      
 ratings:
   paths:
   - app/**
