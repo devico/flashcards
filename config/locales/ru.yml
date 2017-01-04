@@ -1,41 +1,15 @@
 ru:
-  forms:
-    labels:
-      deck:
-        current: "Выберите колоду по умолчанию"
-      welcome:
-        no_cards: "Нет карточек для просмотра"
-        original_text: "Введите оригинальный текст"
-    actions:
-      review: "Проверить карточку"
-    links:
-      show: "Показать"
-      back: "Назад"
-      edit: "Редактировать"
-      delete: "Удалить"
-      confirm: "Вы уверены?"
-  helpers:
-    submit:
-      card:
-        create: "Создать %{model}"
-        update: "Обновить %{model}"
-      deck:
-        create: "Создать %{model}"
-        update: "Обновить %{model}"
-      user:
-        create: "Регистрация"
-        update: "Сохранить изменения"
   app:
     name: "Флешкарточкер"
     review: "Просмотр"
     title: "Первый в мире удобный менеджер флешкарточек. Именно так"
     not_auth_alert: "Первая попытка входа на страницу"
     check_card:
+      no_cards: "Нет карточек для просмотра"
+      original_text: "Введите оригинальный текст"
       correct_answer: "Правильно"
       incorrect_answer: "Не правильно"
-      typo_answer_first: "Вы сделали опечатку! Оригинал: "
-      typo_answer_second: ". Перевод: "      
-      typo_answer_third: ". Вы ввели: "
+      typo_answer: "Вы сделали опечатку! Но ответ принимается."
   activerecord:
     attributes:
       card:
@@ -81,5 +55,6 @@ ru:
     signup: "Регистрация"
     signin: "Войти"
     login_twitter: "Войти через Twitter"
+    title: "Пользователь"
     notice_create: "Добро пожаловать в Флешкарточкер!"
     notice_update: "Ваш профиль успешно обновлен"

@@ -17,7 +17,7 @@
       <%= f.input :password , label: User.human_attribute_name(:password) %>
       <%= f.input :password_confirmation, label: User.human_attribute_name(:password_confirmation) %>
       <%= f.input :locale, as: :select, collection: I18n.available_locales %>
-      <%= f.submit %>
+      <%= f.button :submit %>
     <% end %>
   </section>
 </section>

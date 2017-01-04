@@ -15,5 +15,5 @@
   <%= f.input :translated_text , label: Card.human_attribute_name(:translated_text) %>
   <%= f.input :review_date, as: :date, label: Card.human_attribute_name(:review_date), input_html: {class: "medium-12 columns"} %>
   <%= f.input :image, as: :file, label: t('cards.image') %>
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>

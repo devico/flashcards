@@ -8,9 +8,9 @@
     </p>
     <p>Created by: <%= @deck.user.username %></p>
     <div class="actions">
-      <%= link_to t('forms.links.back'), decks_path %>
+      <%= link_to t('simple_form.links.back'), decks_path %>
       <%= link_to t('decks.edit_deck'), edit_deck_path(@deck) %>
-      <%= link_to t('decks.delete_deck'), @deck, method: :delete, data: { confirm: t('forms.links.confirm') } %>
+      <%= link_to t('decks.delete_deck'), @deck, method: :delete, data: { confirm: t('simple_form.links.confirm') } %>
     </div>
   </section>
 </section>

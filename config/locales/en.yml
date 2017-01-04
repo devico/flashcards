@@ -1,41 +1,15 @@
 en:
-  forms:
-    labels:
-      deck:
-        current: "Select deck by default"
-      welcome:
-        no_cards: "No cards for review"
-        original_text: "Enter original text"
-    actions:
-      review: "Check Card"
-    links:
-      show: "Show"
-      back: "Back"
-      edit: "Edit"
-      delete: "Delete"
-      confirm: "Are you sure?"
-  helpers:
-    submit:
-      card:
-        create: "Create %{model}"
-        update: "Update %{model}"
-      deck:
-        create: "Create %{model}"
-        update: "Update %{model}"
-      user:
-        create: "Register"
-        update: "Save changes"
   app:
     name: "Flashcards"
     review: "Review"
     title: "First in world comfortable manager of flashcards. Exactly"
     not_auth_alert: "First login to access this page"
     check_card:
+      no_cards: "No cards for review"
+      original_text: "Enter original text"
       correct_answer: "Correctly"
       incorrect_answer: "Wrong"
-      typo_answer_first: "You made a typo! Original: "
-      typo_answer_second: ". Translate: "
-      typo_answer_third: ". You input: "
+      typo_answer_first: "You made a typo! But the answer is accepted."
   activerecord:
     attributes:
       card:
@@ -81,5 +55,6 @@ en:
     signup: "Sign up"
     signin: "Sign in"
     login_twitter: "Login with Twitter"
+    title: "User"
     notice_create: "Welcome to Flashcards!"
     notice_update: 'Your profile successfully updated'

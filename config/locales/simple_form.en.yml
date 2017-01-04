@@ -5,27 +5,29 @@ en:
     required:
       text: 'required'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
-    error_notification:
-      default_message: "Please review the problems below:"
-    # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-    # include_blanks:
-    #   defaults:
-    #     age: 'Rather not say'
-    # prompts:
-    #   defaults:
-    #     age: 'Select your age'
+    labels:
+      deck:
+        current: "Select deck by default"
+      user:
+        form_invalid: "Form is invalid"
+      welcome:
+        no_cards: "No cards for review"
+        original_text: "Enter original text"
+    links:
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure?"
+      check: "Check card"
+  helpers:
+    submit:
+      card:
+        create: "Create %{model}"
+        update: "Update %{model}"
+      deck:
+        create: "Create %{model}"
+        update: "Update %{model}"
+      user:
+        create: "Register"
+        update: "Save changes"

@@ -5,7 +5,7 @@
     <%= simple_form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="errors_messages">
-          <h2>Form is invalid</h2>
+          <h2><%= t('simple_form.labels.user.form_invalid') %></h2>
           <ul>
             <% for message in @user.errors.full_messages %>
               <li><%= message %></li>

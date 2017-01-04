@@ -12,16 +12,16 @@
   <div class="row">
     <div class="user_nav">
       <div class="col-lg-9">
-        <% if current_user %>
-          <%= t('user.logged') %>
-          <%= current_user.username %>
-          <%= link_to t('user.edit_profile'), edit_user_path(current_user.id) %>
-          <%= link_to t('user.logout'), logout_path %>
-        <% else %>
-          <%= link_to t('user.signup'), signup_path %>
-          <%= link_to t('user.signin'), login_path %>
-          <%= link_to t('user.login_twitter'), auth_at_provider_path(:provider => :twitter) %>
-        <% end %>
+      <% if current_user %>
+        <%= t('user.logged') %>
+        <%= current_user.username %>
+        <%= link_to t('user.edit_profile'), edit_user_path(current_user.id) %>
+        <%= link_to t('user.logout'), logout_path %>
+      <% else %>
+        <%= link_to t('user.signup'), signup_path %>
+        <%= link_to t('user.signin'), login_path %>
+        <%= link_to t('user.login_twitter'), auth_at_provider_path(:provider => :twitter) %>
+      <% end %>
       </div>
       <div class="col-lg-3">
         <%= link_to_unless_current "English", locale: "en" %> |
