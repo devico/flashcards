@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
     locale = if current_user
                current_user.locale
              elsif params_locale
-               session_locale = params_locale
+               session[:locale] = params_locale
              elsif session_locale
-               session_locale
+               session[:locale]
              else
                accept_locale
              end
