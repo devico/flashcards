@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    
     locale = select_locale(current_user, params[:locale], session[:locale])
 
     return unless locale && I18n.available_locales.include?(locale.to_sym)
@@ -20,7 +19,7 @@ class ApplicationController < ActionController::Base
     if user
       user.locale
     elsif params
-      session = params
+      params
     elsif session
       session
     else
