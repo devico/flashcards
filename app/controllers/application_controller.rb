@@ -9,20 +9,23 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    params_locale = params[:locale]
-    session_locale = session[:locale]
-    accept_locale = http_accept_language.compatible_language_from(I18n.available_locales)
-    locale = if current_user
-               current_user.locale
-             elsif params_locale
-               session[:locale] = params_locale
-             elsif session_locale
-               session[:locale]
-             else
-               accept_locale
-             end
+    
+    locale = select_locale(current_user, params[:locale], session[:locale])
+
     return unless locale && I18n.available_locales.include?(locale.to_sym)
     session[:locale] = I18n.locale = locale.to_sym
+  end
+
+  def select_locale(user, params, session)
+    if user
+      user.locale
+    elsif params
+      session = params
+    elsif session
+      session
+    else
+      http_accept_language.compatible_language_from(I18n.available_locales)
+    end
   end
 
   def default_url_options
