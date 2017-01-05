@@ -29,7 +29,7 @@ RSpec.describe DecksController, :type => :controller do
 
     it "redirects to the deck's page after create" do
       post :create, deck: { name: "Natural Science", user_id: @user.id }
-      expect(response).to redirect_to("/decks")
+      expect(response).to redirect_to("/en/decks")
     end
 
     it "renders #new form when validates fail" do

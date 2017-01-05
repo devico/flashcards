@@ -16,7 +16,7 @@ class DecksController < ApplicationController
   def create
     @deck = current_user.decks.new(params_deck)
     if @deck.save
-      redirect_to decks_path, notice: 'The Deck successfull created!'
+      redirect_to decks_path, notice: t('decks.notice_create')
     else
       render :new
     end

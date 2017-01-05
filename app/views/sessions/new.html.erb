@@ -1,6 +1,6 @@
 <section id="container">
   <section>
-    <h1>Log in</h1>
+    <h1><%= t('sessions.login')%></h1>
     <% if flash[:alert] %>
       <div id="alert">
          <%= flash[:alert] %>
@@ -8,12 +8,12 @@
     <% end %>
     <%= simple_form_for :sessions, :url => sessions_path do |f| %>
       <div class="field">
-        <%= f.input :username, :required =>true, :label => 'Username:' %>
+        <%= f.input :username, :required =>true, :label => t('sessions.username') %>
       </div>
       <div class="field">
-        <%= f.input :password, :required =>true, :label => 'Password:' %>
+        <%= f.input :password, :required =>true, :label => t('sessions.password') %>
       </div>
-      <div class="actions"><%= f.button :submit, "Login" %></div>
+      <div class="actions"><%= f.button :submit, t('sessions.login') %></div>
     <% end %>
   </section>
 </section>

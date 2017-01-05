@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to welcome_index_url, notice: "Welcome to Flashcards!"
+      redirect_to welcome_index_url, notice: t('user.notice_create')
     else
       render :new
     end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to root_path, notice: 'Your profile successfully updated'
+      redirect_to root_path, notice: t('user.notice_update')
     else
       render :edit
     end
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck_id)
+    params.require(:user).permit(:username, :email, :password, :confirmation_password, :current_deck_id, :locale)
   end
 end

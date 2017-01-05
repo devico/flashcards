@@ -2,7 +2,7 @@
   <section>
     <table>
       <thead>
-        Все карточки
+        <%= t('cards.all_cards') %>
       </thead>
       <tbody>
         <% @cards.each do |card| %>
@@ -12,9 +12,9 @@
             <td><%= card.success_counter %></td>
             <td><%= card.fail_counter %></td>
             <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
-            <td><%= link_to 'Показать', card %></td>
-            <td><%=link_to 'Редактировать', edit_card_path(card) %></td>
-            <td><%= link_to 'Удалить', card, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+            <td><%= link_to t('links.show'), card %></td>
+            <td><%=link_to t('links.edit'), edit_card_path(card) %></td>
+            <td><%= link_to t('links.delete'), card, method: :delete, data: { confirm: t('links.confirm') } %></td>
           </tr>
         <% end %>
       </tbody>

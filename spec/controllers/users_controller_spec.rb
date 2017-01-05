@@ -11,7 +11,7 @@ RSpec.describe UsersController, :type => :controller do
 
     it "redirects to the user's page after create user" do
       post :create, user: { username: "sergey", email: "sergo@ex.ua", password: '2222' }
-      expect(response).to redirect_to("/welcome/index")
+      expect(response).to redirect_to("/welcome/index?locale=en")
     end
 
     it "renders #new form when validates fail" do
@@ -24,7 +24,7 @@ RSpec.describe UsersController, :type => :controller do
 
     it "when change user" do
       patch :update, id: @user.id, user: { password: '456' }
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/?locale=en")
     end
   end
 

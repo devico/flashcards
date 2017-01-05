@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :users
-  resources :sessions
-  resources :cards
-  resources :decks
+  scope "(:locale)" do
+    resources :users
+    resources :sessions
+    resources :cards
+    resources :decks
+  end
 
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"

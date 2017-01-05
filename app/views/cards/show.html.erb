@@ -2,16 +2,24 @@
   <section>
   <div class="painting">
     <p id="notice"><%= notice %></p>
-    <p><strong>Карточка создана</strong></p>
-    <p>Deck name: <%= @card.deck.name %></p>
-    <p>Original text: <%= @card.original_text %></p>
-    <p>Translated text: <%= @card.translated_text %></p>
-    <p>Card image: </p>
+    <p><strong><%= t('cards.notice') %></strong></p>
+    <p>
+      <%= Deck.human_attribute_name(:name) %>
+      <%= @card.deck.name %>
+    </p>
+    <p>
+      <%= Card.human_attribute_name(:original_text) %> 
+      <%= @card.original_text %>
+    </p>
+    <p>
+      <%= Card.human_attribute_name(:translated_text) %>
+      <%= @card.translated_text %>
+    </p>
     <%= image_tag @card.image_url(:thumb).to_s %>
     <div class="actions">
-      <%= link_to 'Назад', cards_path %>
-      <%= link_to 'Редактировать', edit_card_path(@card) %>
-      <%= link_to 'Удалить', @card, method: :delete, data: { confirm: 'Вы уверены?' } %>
+      <%= link_to t('links.back'), cards_path %>
+      <%= link_to t('cards.edit'), edit_card_path(@card) %>
+      <%= link_to t('cards.delete'), @card, method: :delete, data: { confirm: t('links.confirm') } %>
     </div>
   </div>
   </section>

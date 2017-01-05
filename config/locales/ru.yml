@@ -1,0 +1,60 @@
+ru:
+  app:
+    name: "Флешкарточкер"
+    review: "Просмотр"
+    title: "Первый в мире удобный менеджер флешкарточек. Именно так"
+    not_auth_alert: "Первая попытка входа на страницу"
+    check_card:
+      no_cards: "Нет карточек для просмотра"
+      original_text: "Введите оригинальный текст"
+      correct_answer: "Правильно"
+      incorrect_answer: "Не правильно"
+      typo_answer: "Вы сделали опечатку! Но ответ принимается."
+  activerecord:
+    attributes:
+      card:
+        original_text: "Оригинальный текст"
+        translated_text: "Перевод текста"
+        review_date: "Дата просмотра"
+      deck:
+        name: "Название колоды"
+      user:
+        username: "Имя пользователя"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        locale: "Локализация"
+  cards:
+    all: "Все карточки"
+    image: "Изображение"
+    name: "Карточка"
+    delete: "Удалить карточку"
+    new: "Новая карточка"
+    add: "Добавить карточку"
+    edit: "Редактировать карточку"
+    notice: "Карточка успешно создана"
+    error_base: "оригинальный текст и текст перевода не должны совпадать"
+  decks:
+    all: "Все колоды"
+    new: "Новая колода"
+    add: "Добавить кододу"
+    edit: "Редактировать колоду"
+    delete: "Удалить колоду"
+    notice: "Колода создана"
+  sessions:
+    username: "Имя пользователя: "
+    password: "Пароль: "
+    login: "Войти"
+    notice_create_success: "Вы вошли "
+    notice_create_fail: "Имя пользователя или пароль неверны"
+    notice_destroy: "Вы вышли"
+  user:
+    edit: "Редактировать профиль"
+    logout: "Выйти"
+    logged: "Вы вошли как "
+    signup: "Регистрация"
+    signin: "Войти"
+    login_twitter: "Войти через Twitter"
+    title: "Пользователь"
+    notice_create: "Добро пожаловать в Флешкарточкер!"
+    notice_update: "Ваш профиль успешно обновлен"

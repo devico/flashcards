@@ -1,23 +1,60 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app:
+    name: "Flashcards"
+    review: "Review"
+    title: "First in world comfortable manager of flashcards. Exactly"
+    not_auth_alert: "First login to access this page"
+    check_card:
+      no_cards: "No cards for review"
+      original_text: "Enter original text"
+      correct_answer: "Correctly"
+      incorrect_answer: "Wrong"
+      typo_answer_first: "You made a typo! But the answer is accepted."
+  activerecord:
+    attributes:
+      card:
+        original_text: "Original text"
+        translated_text: "Translated text"
+        review_date: "Review date"
+      deck:
+        name: "Deck name"
+      user:
+        username: "User name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        locale: "Locale"
+  cards:
+    all: "All cards"
+    image: "Image"
+    name: "Card"
+    delete: "Delete card"
+    new: "New card"
+    add: "Add card"
+    edit: "Edit card"
+    notice: "Card is created"
+    error_base: "original and translated text can’t be same"
+  decks:
+    all: "All decks"
+    new: "New deck"
+    add: "Add deck"
+    edit: "Edit deck"
+    delete: "Delete deck"
+    notice: "The Deck successfull created!"
+  sessions:
+    username: "User name: "
+    password: "Password: "
+    login: "Login"
+    notice_create_success: "Logged in"
+    notice_create_fail: "Username or password was invalid"
+    notice_destroy: "Logged out!"
+  user:
+    edit: "Edit Profile"
+    logout: "Log out"
+    logged: "Logged in as "
+    signup: "Sign up"
+    signin: "Sign in"
+    login_twitter: "Login with Twitter"
+    title: "User"
+    notice_create: "Welcome to Flashcards!"
+    notice_update: 'Your profile successfully updated'

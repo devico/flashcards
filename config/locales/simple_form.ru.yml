@@ -1,0 +1,33 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+    labels:
+      deck:
+        current: "Выберите колоду текущей"
+      user:
+        form_invalid: "Некорректная форма"
+      welcome:
+        no_cards: "Нет карточек для просмотра"
+        original_text: "Введите оригинальный текст"
+  links:
+    show: "Просмотр"
+    back: "Назад"
+    edit: "Редактировать"
+    delete: "Удалить"
+    confirm: "Вы уверены?"      
+    check: "Проверить карточку"
+  helpers:
+    submit:
+      card:
+        create: "Создать %{model}"
+        update: "Обновить %{model}"
+      deck:
+        create: "Создать %{model}"
+        update: "Обновить %{model}"
+      user:
+        create: "Регистрация"
+        update: "Сохранить изменения"

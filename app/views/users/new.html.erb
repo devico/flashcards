@@ -1,11 +1,11 @@
 <section id="container">
   <section>
-    <h1>Sign Up</h1>
+    <h1><%= t('user.signup')%></h1>
 
     <%= simple_form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="errors_messages">
-          <h2>Form is invalid</h2>
+          <h2><%= f.error_notification %></h2>
           <ul>
             <% for message in @user.errors.full_messages %>
               <li><%= message %></li>
@@ -14,16 +14,19 @@
         </div>
       <% end %>
       <div class="field">
-        <%= f.input :username, label: 'Username:' %>
+        <%= f.input :username %>
       </div>
       <div class="field">
-        <%= f.input :email, label: 'Email:' %>
+        <%= f.input :email %>
       </div>
       <div class="field">
-        <%= f.input :password, label: 'Password:' %>
+        <%= f.input :password %>
       </div>
       <div class="field">
-        <%= f.input :password_confirmation, label: 'Confirm password:' %>
+        <%= f.input :password_confirmation %>
+      </div>
+      <div class="field">
+        <%= f.input :locale, as: :select, collection: I18n.available_locales %>
       </div>
       <div class="actions"><%= f.submit %></div>
     <% end %>
