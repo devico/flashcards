@@ -13,9 +13,9 @@
             </ul>
         </div>
       <% end %>
-      <%= f.input :email, label: User.human_attribute_name(:email) %>
-      <%= f.input :password , label: User.human_attribute_name(:password) %>
-      <%= f.input :password_confirmation, label: User.human_attribute_name(:password_confirmation) %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
       <%= f.input :locale, as: :select, collection: I18n.available_locales %>
       <%= f.button :submit %>
     <% end %>

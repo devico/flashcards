@@ -17,9 +17,9 @@
     </p>
     <%= image_tag @card.image_url(:thumb).to_s %>
     <div class="actions">
-      <%= link_to t('simple_form.links.back'), cards_path %>
+      <%= link_to t('links.back'), cards_path %>
       <%= link_to t('cards.edit'), edit_card_path(@card) %>
-      <%= link_to t('cards.delete'), @card, method: :delete, data: { confirm: t('simple_form.links.confirm') } %>
+      <%= link_to t('cards.delete'), @card, method: :delete, data: { confirm: t('links.confirm') } %>
     </div>
   </div>
   </section>

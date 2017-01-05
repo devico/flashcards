@@ -12,9 +12,9 @@
             <td><%= card.success_counter %></td>
             <td><%= card.fail_counter %></td>
             <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
-            <td><%= link_to t('simple_form.links.show'), card %></td>
-            <td><%=link_to t('simple_form.links.edit'), edit_card_path(card) %></td>
-            <td><%= link_to t('simple_form.links.delete'), card, method: :delete, data: { confirm: t('simple_form.links.confirm') } %></td>
+            <td><%= link_to t('links.show'), card %></td>
+            <td><%=link_to t('links.edit'), edit_card_path(card) %></td>
+            <td><%= link_to t('links.delete'), card, method: :delete, data: { confirm: t('links.confirm') } %></td>
           </tr>
         <% end %>
       </tbody>

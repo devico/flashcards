@@ -5,7 +5,7 @@
     <%= simple_form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="errors_messages">
-          <h2><%= t('simple_form.labels.user.form_invalid') %></h2>
+          <h2><%= f.error_notification %></h2>
           <ul>
             <% for message in @user.errors.full_messages %>
               <li><%= message %></li>
@@ -14,16 +14,16 @@
         </div>
       <% end %>
       <div class="field">
-        <%= f.input :username, label: User.human_attribute_name(:username) %>
+        <%= f.input :username %>
       </div>
       <div class="field">
-        <%= f.input :email, label: User.human_attribute_name(:email) %>
+        <%= f.input :email %>
       </div>
       <div class="field">
-        <%= f.input :password, label: User.human_attribute_name(:password) %>
+        <%= f.input :password %>
       </div>
       <div class="field">
-        <%= f.input :password_confirmation, label: User.human_attribute_name(:password_confirmation) %>
+        <%= f.input :password_confirmation %>
       </div>
       <div class="field">
         <%= f.input :locale, as: :select, collection: I18n.available_locales %>

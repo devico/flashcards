@@ -5,7 +5,7 @@
     <hr>
     <%= f.input :card_id, as: :hidden, input_html: { value: @card.id } %>
     <%= f.input :user_text, label: t('app.check_card.original_text') %>
-    <%= f.submit t('simple_form.links.check') %>
+    <%= f.submit t('links.check') %>
   <% end %>
 <%  else %>
   <p>Н<%= t('app.check_card.no_cards') %></p>

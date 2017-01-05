@@ -13,13 +13,13 @@ ru:
       welcome:
         no_cards: "Нет карточек для просмотра"
         original_text: "Введите оригинальный текст"
-    links:
-      show: "Просмотр"
-      back: "Назад"
-      edit: "Редактировать"
-      delete: "Удалить"
-      confirm: "Вы уверены?"      
-      check: "Проверить карточку"
+  links:
+    show: "Просмотр"
+    back: "Назад"
+    edit: "Редактировать"
+    delete: "Удалить"
+    confirm: "Вы уверены?"      
+    check: "Проверить карточку"
   helpers:
     submit:
       card:

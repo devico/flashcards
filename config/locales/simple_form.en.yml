@@ -13,13 +13,13 @@ en:
       welcome:
         no_cards: "No cards for review"
         original_text: "Enter original text"
-    links:
-      show: "Show"
-      back: "Back"
-      edit: "Edit"
-      delete: "Delete"
-      confirm: "Are you sure?"
-      check: "Check card"
+  links:
+    show: "Show"
+    back: "Back"
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    check: "Check card"
   helpers:
     submit:
       card:

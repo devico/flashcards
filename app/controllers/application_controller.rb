@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def select_locale(user, params, session)
-    if user
+    if user && !user.locale.blank?
       user.locale
     elsif params
       params
