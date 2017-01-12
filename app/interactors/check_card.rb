@@ -3,16 +3,19 @@ class CheckCard
 
   def call
     @card = Card.find(context.card_id)
-    verification = VerifyCard.new({ original_text: @card.original_text,
-                                   user_text: context.user_text,
-                                   factor: @card.factor,
-                                   probe: @card.probe,
-                                   repetition: @card.repetition }).set_new_preview_date
-    @card.update(factor: verification[:factor],
-                 probe: verification[:probe],
-                 repetition: verification[:repetition],
-                 review_date: verification[:repetition].days.since)
-    grade_scale = verification[:grade_scale]
+    new_review_date = CalculateReviewDate.new({ original_text: @card.original_text,
+                        user_text: context.user_text,
+                        factor: @card.factor,
+                        probe: @card.probe,
+                        repetition: @card.repetition }).set_new_preview_date
+    @card.update(factor: new_review_date[:factor],
+                 probe: new_review_date[:probe],
+                 repetition: new_review_date[:repetition],
+                 review_date: new_review_date[:repetition].days.since)
+    answer_message(new_review_date[:grade_scale])
+  end  
+
+  def answer_message(grade_scale)
     notice = case grade_scale
       when 5 then I18n.t('app.check_card.perfect_answer')
       when 4 then I18n.t('app.check_card.good_answer')
@@ -21,6 +24,6 @@ class CheckCard
       when 1 then I18n.t('app.check_card.incorrect_answer')
       else I18n.t('app.check_card.failed')
       end  
-    context.notice = notice
+    context.message = notice
   end
 end

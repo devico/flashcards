@@ -1,4 +1,4 @@
-class VerifyCard
+class CalculateReviewDate
   require 'damerau-levenshtein'
 
   PASS_LEVEL_GOOD = 0.15
@@ -50,18 +50,17 @@ class VerifyCard
     dl = DamerauLevenshtein.distance(@original_text, @user_text)
     check_pass = dl.to_f / @original_text.size.to_f
     if check_pass > 0
-      @q = 0
-      # if check_pass < @good_level_pass
-      #   @q = 4
-      # elsif check_pass == @good_level_pass
-      #   @q = 3
-      # elsif check_pass.between?(@good_level_pass, @acceptable_level_pass)
-      #   @q = 2
-      # elsif check_pass.between?(@acceptable_level_pass, @unacceptable_level_pass)
-      #   @q = 1
-      # else
-      #   @q = 0
-      # end
+      if check_pass < @good_level_pass
+        @q = 4
+      elsif check_pass == @good_level_pass
+        @q = 3
+      elsif check_pass.between?(@good_level_pass, @acceptable_level_pass)
+        @q = 2
+      elsif check_pass.between?(@acceptable_level_pass, @unacceptable_level_pass)
+        @q = 1
+      else
+        @q = 0
+      end
     else
       @q = 5
     end
