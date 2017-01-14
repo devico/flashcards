@@ -44,6 +44,7 @@ class CalculateReviewDate
         @factor = 1.3
       end
     end
+    @factor
   end
 
   def calculate_grade_scale
@@ -65,5 +66,4 @@ class CalculateReviewDate
       @q = 5
     end
   end
-
 end
