@@ -7,9 +7,12 @@ ru:
     check_card:
       no_cards: "Нет карточек для просмотра"
       original_text: "Введите оригинальный текст"
-      correct_answer: "Правильно"
-      incorrect_answer: "Не правильно"
+      perfect_answer: "Отличный ответ"
+      good_answer: "Хороший ответ"
       typo_answer: "Вы сделали опечатку! Но ответ принимается."
+      much_mistakes_answer: "Не принимается вы сделали много ошибок"
+      incorrect_answer: "Не правильный ответ"
+      failed: "Полный провал"
   activerecord:
     attributes:
       card:

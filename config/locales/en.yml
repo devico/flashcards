@@ -7,9 +7,12 @@ en:
     check_card:
       no_cards: "No cards for review"
       original_text: "Enter original text"
-      correct_answer: "Correctly"
-      incorrect_answer: "Wrong"
-      typo_answer_first: "You made a typo! But the answer is accepted."
+      perfect_answer: "Perfect answer"
+      good_answer: "Good answer"
+      typo_answer: "You made a typo! But the answer is accepted."
+      much_mistakes_answer: "Not accepted. You made a lot of mistakes"
+      incorrect_answer: "Wrong answer"
+      failed: "Complete blackout"
   activerecord:
     attributes:
       card:

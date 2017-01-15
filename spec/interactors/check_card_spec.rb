@@ -1,56 +1,32 @@
 require 'rails_helper'
 describe CheckCard do
 
+  before do
+    user = FactoryGirl.create(:user)
+    deck = FactoryGirl.create(:deck)
+    @card = FactoryGirl.create(:card, original_text: 'clean',
+                              translated_text: 'чистый', 
+                              user_id: user.id, deck_id: deck.id)
+  end
+
   describe '#call' do
 
-    context 'successfull check' do
-    
-      it "is valid when card is check for first time" do
-        card = FactoryGirl.create(:card, success_counter: 0)
-        result = CheckCard.call(card_id: card.id, user_text: "clean")
-        expect(result.card.review_date).to eq(Date.parse(12.hours.since.to_s))
+    it "is valid when we have new review date after 2 probe" do
+      2.times do
+        CheckCard.call(card_id: @card.id, user_text: "clean")
       end
-
-      it "is valid when card is check for second time" do
-        card = FactoryGirl.create(:card, success_counter: 1)
-        result = CheckCard.call(card_id: card.id, user_text: "clean")
-        expect(result.card.review_date).to eq(Date.parse(3.days.since.to_s))
-      end
-
-      it "is valid when card is check for third time" do
-        card = FactoryGirl.create(:card, success_counter: 2)
-        result = CheckCard.call(card_id: card.id, user_text: "clean")
-        expect(result.card.review_date).to eq(Date.parse(7.days.since.to_s))
-      end
-
-      it "is valid when card is check for fourth time" do
-        card = FactoryGirl.create(:card, success_counter: 3)
-        result = CheckCard.call(card_id: card.id, user_text: "clean")
-        expect(result.card.review_date).to eq(Date.parse(14.days.since.to_s))
-      end      
-
-      it "is valid when card is check for fifth time" do
-        card = FactoryGirl.create(:card, success_counter: 4)
-        result = CheckCard.call(card_id: card.id, user_text: "clean")
-        expect(result.card.review_date).to eq(Date.parse(1.month.since.to_s))
-      end
-
-      it "is valid when card is check for sixth time" do
-       card = FactoryGirl.create(:card, success_counter: 5)
-       result = CheckCard.call(card_id: card.id, user_text: "clean")
-       expect(Card.find(result.card.id).success_counter).to eq(6)
-       expect(result.card.review_date).to eq(Date.parse(1.year.since.to_s))
-      end
+      card = Card.find_by(id: @card.id)
+      expect(card.review_date.strftime('%d-%m-%Y')).to eq(6.days.since.strftime('%d-%m-%Y'))
     end
 
-    context 'fail check' do
+    it "is valid when check is successfully" do
+      result = CheckCard.call(card_id: @card.id, user_text: "clean")
+      expect(result.message).to eq('Perfect answer')
+    end
 
-      it "is valid when check failed" do
-        card = FactoryGirl.create(:card, success_counter: 4, fail_counter: 2)
-        result = CheckCard.call(card_id: card.id, user_text: "klin")
-        expect(result.card.success_counter).to eq(0)
-        expect(result.card.review_date).to eq(Date.parse(12.hours.since.to_s))
-      end
+    it "is valid when check failed" do
+      result = CheckCard.call(card_id: @card.id, user_text: "cleeanm")
+      expect(result.message).to eq('Complete blackout')
     end
   end
 end
