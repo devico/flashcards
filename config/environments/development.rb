@@ -31,10 +31,11 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :port      => 587,
-    :address   => "smtp.mailgun.org",
-    :user_name => "postmaster@sandbox2e9b2d96b0eb4df29dbcd013fd958778.mailgun.org",
-    :password  => "1f27f853b5ec9e42b9172ab758480929"
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    :user_name      => 'postmaster@sandbox2e9b2d96b0eb4df29dbcd013fd958778.mailgun.org',
+    :password       => '1f27f853b5ec9e42b9172ab758480929',
+    :authentication => :plain
   }
   config.action_mailer.perform_caching = false
 

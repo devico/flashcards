@@ -24,6 +24,7 @@ gem 'whenever', require: false
 gem "letter_opener", group: :development
 gem 'rollbar'
 gem 'newrelic_rpm'
+gem 'mailgun-ruby', '~>1.1.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
