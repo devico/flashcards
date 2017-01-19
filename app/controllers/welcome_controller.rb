@@ -5,6 +5,9 @@ class WelcomeController < ApplicationController
   def review
     result = ReviewCard.call(user: current_user)
     @card = result.card
+    respond_to do |format|
+      format.json { render json: @card }
+    end
   end
 
   def check
@@ -12,7 +15,6 @@ class WelcomeController < ApplicationController
       card_id: card_params[:card_id],
       user_text: card_params[:user_text]
     )
-    # redirect_to root_path, notice: result.message
     respond_to do |format|
       format.html { redirect_to root_path, notice: result.message }
       format.js

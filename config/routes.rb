@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post "oauth/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
+  get 'welcome/review' => 'welcome#review'
   root 'welcome#review'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

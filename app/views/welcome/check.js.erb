@@ -1,1 +1,7 @@
-$("#container").html("<%= j render('form_review') %>");
+$.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/welcome/review",
+        success: function(data){}
+      });
+$('#container').html('<%= j render("form_review") %>');
