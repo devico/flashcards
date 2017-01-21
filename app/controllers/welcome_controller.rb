@@ -6,7 +6,8 @@ class WelcomeController < ApplicationController
     result = ReviewCard.call(user: current_user)
     @card = result.card
     respond_to do |format|
-      format.json { render json: @card }
+      format.html
+      format.json { render json: { 'html' => render_to_string(partial: 'form_review.html.erb', locals: { card: @card }) } }
     end
   end
 
