@@ -1,5 +1,4 @@
 <% if @card %>
-  <p id="notice"><%= notice %></p>
   <%= simple_form_for 'check', url: '/welcome/check', class: 'review_form', remote: true  do |f| %>
     <%= image_tag @card.image_url(:thumb).to_s %><br>
     <%= f.label @card.translated_text %>

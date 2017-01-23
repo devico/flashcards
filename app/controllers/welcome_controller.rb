@@ -7,17 +7,20 @@ class WelcomeController < ApplicationController
     @card = result.card
     respond_to do |format|
       format.html
-      format.json { render json: { 'html' => render_to_string(partial: 'form_review.html.erb', locals: { card: @card }) } }
+      format.json { render json: { 
+                    'html' => render_to_string(partial: 'form_review.html.erb', locals: { card: @card })
+                  }
+      }
     end
   end
 
   def check
-    result = CheckCard.call(
+    @result = CheckCard.call(
       card_id: card_params[:card_id],
       user_text: card_params[:user_text]
     )
     respond_to do |format|
-      format.html { redirect_to root_path, notice: result.message }
+      format.html { redirect_to root_path, notice: @result.message }
       format.js
     end
   end
