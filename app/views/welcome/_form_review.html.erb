@@ -1,5 +1,5 @@
 <% if @card %>
-  <%= simple_form_for 'check', url: '/welcome/check' do |f| %>
+  <%= simple_form_for 'check', url: '/welcome/check', class: 'review_form', remote: true  do |f| %>
     <%= image_tag @card.image_url(:thumb).to_s %><br>
     <%= f.label @card.translated_text %>
     <hr>
@@ -8,5 +8,5 @@
     <%= f.submit t('links.check') %>
   <% end %>
 <%  else %>
-  <p>Н<%= t('app.check_card.no_cards') %></p>
+  <p><%= t('app.check_card.no_cards') %></p>
 <% end %>
