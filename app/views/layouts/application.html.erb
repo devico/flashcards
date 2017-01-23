@@ -15,11 +15,11 @@
       <% if current_user %>
         <%= t('user.logged') %>
         <%= current_user.username %>
-        <%= link_to t('user.edit'), edit_user_path(current_user.id) %>
-        <%= link_to t('user.logout'), logout_path %>
+        <%= link_to t('user.edit'), edit_dashboard_user_path(current_user.id) %>
+        <%= link_to t('user.logout'), dashboard_logout_path %>
       <% else %>
-        <%= link_to t('user.signup'), signup_path %>
-        <%= link_to t('user.signin'), login_path %>
+        <%= link_to t('user.signup'), dashboard_signup_path %>
+        <%= link_to t('user.signin'), dashboard_login_path %>
         <%= link_to t('user.login_twitter'), auth_at_provider_path(:provider => :twitter) %>
       <% end %>
       </div>
@@ -43,10 +43,10 @@
             <% if current_user %>
               <li><%= link_to t('app.review'), root_path %></li>
             <% end %>
-            <li><%= link_to t('cards.all'), cards_path %></li>
-            <li><%= link_to t('decks.all'), decks_path %></li>
-            <li><%= link_to t('decks.add'), new_deck_path %></li>
-            <li><%= link_to t('cards.add'), new_card_path %></li>
+            <li><%= link_to t('cards.all'), home_cards_path %></li>
+            <li><%= link_to t('decks.all'), home_decks_path %></li>
+            <li><%= link_to t('decks.add'), new_home_deck_path %></li>
+            <li><%= link_to t('cards.add'), new_home_card_path %></li>
           </ul>
         </div>
       </div>

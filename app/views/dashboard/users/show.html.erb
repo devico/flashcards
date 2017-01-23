@@ -5,7 +5,7 @@
       <%= current_user.username %>
       <%= current_user.email %>
     </p>
-    <%= link_to t('user.edit'), edit_user_path(current_user) %>
-    <%= link_to t('links.back'), welcome_index_path %>
+    <%= link_to t('user.edit'), edit_dashboard_user_path(current_user) %>
+    <%= link_to t('links.back'), home_welcome_index_path %>
   </section>
 </section>

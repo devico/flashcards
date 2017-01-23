@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, :type => :controller do
+RSpec.describe Dashboard::UsersController, :type => :controller do
 
   before do
     @user = FactoryGirl.create(:user)
@@ -11,7 +11,7 @@ RSpec.describe UsersController, :type => :controller do
 
     it "redirects to the user's page after create user" do
       post :create, user: { username: "sergey", email: "sergo@ex.ua", password: '2222' }
-      expect(response).to redirect_to("/welcome/index?locale=en")
+      expect(response).to redirect_to("/home/welcome/index?locale=en")
     end
 
     it "renders #new form when validates fail" do

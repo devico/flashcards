@@ -1,5 +1,5 @@
 <div>
-  <%= simple_form_for current_user, url: user_path(current_user), method: :put do |f| %>
+  <%= simple_form_for current_user, url: dashboard_user_path(current_user), method: :put do |f| %>
     <%= f.input :current_deck_id, label: t('simple_form.labels.deck.current'), collection: current_user.decks.map { |d| [d.name, d.id] },:include_blank => false %>
     <%= f.button :submit %>
   <% end %>

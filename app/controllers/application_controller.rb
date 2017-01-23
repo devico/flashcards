@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_url, alert: t('app.not_auth_alert')
+    redirect_to dashboard_login_url, alert: t('app.not_auth_alert')
   end
 
   def set_locale

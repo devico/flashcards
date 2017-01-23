@@ -9,9 +9,9 @@
         <% @decks.each do |deck| %>
           <tr>
             <td><%= deck.name %></td>
-            <td><%= link_to t('links.show'), deck %></td>
-            <td><%=link_to t('links.edit'), edit_deck_path(deck) %></td>
-            <td><%= link_to t('links.delete'), deck, method: :delete, data: { confirm: t('links.confirm') } %></td>
+            <td><%= link_to t('links.show'), home_deck_path(deck) %></td>
+            <td><%=link_to t('links.edit'), edit_home_deck_path(deck) %></td>
+            <td><%= link_to t('links.delete'), home_deck_path(deck), method: :delete, data: { confirm: t('links.confirm') } %></td>
           </tr>
         <% end %>
       </tbody>

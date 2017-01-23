@@ -2,7 +2,7 @@
   <section>
     <h1><%= t('user.signup')%></h1>
 
-    <%= simple_form_for @user do |f| %>
+    <%= simple_form_for(:user, url: {action: "create"}, method: 'post') do |f| %>
       <% if @user.errors.any? %>
         <div class="errors_messages">
           <h2><%= f.error_notification %></h2>

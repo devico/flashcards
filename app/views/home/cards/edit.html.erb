@@ -4,7 +4,7 @@
       <%= t('cards.edit')%>
     </p>
     <%= render 'form' %>
-    <%= link_to t('links.show'), @card %>
-    <%= link_to t('links.back'), cards_path %>
+    <%= link_to t('links.show'), home_card_path(@card) %>
+    <%= link_to t('links.back'), home_cards_path %>
   </section>
 </section>

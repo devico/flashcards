@@ -3,7 +3,6 @@ $.ajax({
         dataType: "json",
         url: "/welcome/review",
         success: function(data){
-          $('#container').html(data.notice);
           $('#container').html(data.html);
         }
       });

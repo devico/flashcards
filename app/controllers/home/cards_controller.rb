@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Home::CardsController < ApplicationController
   before_action :require_login
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
@@ -21,7 +21,7 @@ class CardsController < ApplicationController
   def create
     @card = current_user.cards.new(card_params)
     if @card.save
-      redirect_to @card
+      redirect_to home_card_path(@card)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class CardsController < ApplicationController
 
   def update
     if @card.update(card_params)
-      redirect_to @card
+      redirect_to home_card_path(@card)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to cards_path
+    redirect_to home_cards_path
   end
 
   private

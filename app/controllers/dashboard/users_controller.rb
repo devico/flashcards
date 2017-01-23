@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Dashboard::UsersController < ApplicationController
   def show
   end
 
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to welcome_index_url, notice: t('user.notice_create')
+      redirect_to home_welcome_index_url, notice: t('user.notice_create')
     else
       render :new
     end

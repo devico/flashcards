@@ -1,4 +1,4 @@
-class DecksController < ApplicationController
+class Home::DecksController < ApplicationController
   before_action :require_login
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
 
@@ -16,7 +16,7 @@ class DecksController < ApplicationController
   def create
     @deck = current_user.decks.new(params_deck)
     if @deck.save
-      redirect_to decks_path, notice: t('decks.notice_create')
+      redirect_to home_decks_path, notice: t('decks.notice_create')
     else
       render :new
     end
