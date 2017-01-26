@@ -82,4 +82,5 @@ production:
   <<: *default
   database: flashcards_production
   username: flashcards
-  password: <%= ENV['FLASHCARDS_DATABASE_PASSWORD'] %>
+#  password: <%= ENV['FLASHCARDS_DATABASE_PASSWORD'] %>
+  password: 012345678
