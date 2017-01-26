@@ -84,4 +84,4 @@ production:
   database: flashcards_production
   username: flashcards
 #  password: <%= ENV['FLASHCARDS_DATABASE_PASSWORD'] %>
-  password: 01234567
+  password: '01234567'
