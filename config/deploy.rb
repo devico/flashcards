@@ -1,8 +1,8 @@
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '93.190.40.211', port: 3000, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:username/appname.git'
-set :application,     'appname'
+set :repo_url,        'git@github.com:devico/flashcards.git'
+set :application,     'flashcards'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
