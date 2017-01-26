@@ -1,5 +1,5 @@
 # Change these
-server '93.190.40.211', port: 3000, roles: [:web, :app, :db], primary: true
+server '93.190.40.211', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:devico/flashcards.git'
 set :application,     'flashcards'
