@@ -1,0 +1,10 @@
+<section id="container">
+  <section>
+    <p style="font-size: 22px;">
+      <%= t('cards.edit')%>
+    </p>
+    <%= render 'form' %>
+    <%= link_to t('links.show'), home_card_path(@card) %>
+    <%= link_to t('links.back'), home_cards_path %>
+  </section>
+</section>

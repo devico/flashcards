@@ -1,0 +1,22 @@
+<section id="container">
+  <section>
+    <h4><%= @secret %></h4>
+    <table>
+      <thead>
+        <%= t('decks.all') %>
+      </thead>
+      <tbody>
+        <% @decks.each do |deck| %>
+          <tr>
+            <td><%= deck.name %></td>
+            <td><%= link_to t('links.show'), home_deck_path(deck) %></td>
+            <td><%=link_to t('links.edit'), edit_home_deck_path(deck) %></td>
+            <td><%= link_to t('links.delete'), home_deck_path(deck), method: :delete, data: { confirm: t('links.confirm') } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+  <br>
+  <%= render 'form_set_current'%>
+</section>

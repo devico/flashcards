@@ -1,0 +1,21 @@
+<section id="container">
+  <section>
+    <table>
+      <thead>
+        <%= t('cards.all_cards') %>
+      </thead>
+      <tbody>
+        <% @cards.each do |card| %>
+          <tr>
+            <td><%= card.original_text %></td>
+            <td><%= card.translated_text %></td>
+            <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
+            <td><%= link_to t('links.show'), home_card_path(card) %></td>
+            <td><%=link_to t('links.edit'), edit_home_card_path(card) %></td>
+            <td><%= link_to t('links.delete'), home_card_path(card), method: :delete, data: { confirm: t('links.confirm') } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</section>

@@ -1,0 +1,19 @@
+<section id="container">
+  <section>
+    <h1><%= t('sessions.login')%></h1>
+    <% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%= simple_form_for :sessions, :url => dashboard_sessions_path do |f| %>
+      <div class="field">
+        <%= f.input :username, :required =>true, :label => t('sessions.username') %>
+      </div>
+      <div class="field">
+        <%= f.input :password, :required =>true, :label => t('sessions.password') %>
+      </div>
+      <div class="actions"><%= f.button :submit, t('sessions.login') %></div>
+    <% end %>
+  </section>
+</section>

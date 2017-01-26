@@ -6,7 +6,7 @@ class CardsMailer < ApplicationMailer
     message_params =  { from: @user.email,
                       to: @user.email,
                       subject: 'New cards for review on Flashcards!',
-                      text:    'e remind you that you have a card to review!'
+                      text:    'We remind you that you have a card to review!'
                     }
     mg_client.send_message ENV['MAILGUN_DOMAIN'], message_params
   end

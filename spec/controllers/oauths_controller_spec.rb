@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OauthsController, :type => :controller do
+RSpec.describe Dashboard::OauthsController, :type => :controller do
 
   # describe "GET oauth" do
   #   it "returns http success" do

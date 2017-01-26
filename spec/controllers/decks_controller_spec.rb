@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DecksController, :type => :controller do
+RSpec.describe Home::DecksController, :type => :controller do
 
   before do
     @user = FactoryGirl.create(:user)
@@ -29,7 +29,7 @@ RSpec.describe DecksController, :type => :controller do
 
     it "redirects to the deck's page after create" do
       post :create, deck: { name: "Natural Science", user_id: @user.id }
-      expect(response).to redirect_to("/en/decks")
+      expect(response).to redirect_to("/home/decks?locale=en")
     end
 
     it "renders #new form when validates fail" do

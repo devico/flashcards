@@ -1,0 +1,16 @@
+<section id="container">
+  <section>
+    <p id="notice"><%= notice %></p>
+    <p><strong><%= t('decks.notice')%></strong></p>
+    <p>
+      <%= @deck.name %>
+      <%= Deck.human_attribute_name(:name) %>    
+    </p>
+    <p>Created by: <%= @deck.user.username %></p>
+    <div class="actions">
+      <%= link_to t('links.back'), home_decks_path %>
+      <%= link_to t('decks.edit_deck'), edit_home_deck_path(@deck) %>
+      <%= link_to t('decks.delete_deck'), home_deck_path(@deck), method: :delete, data: { confirm: t('links.confirm') } %>
+    </div>
+  </section>
+</section>
