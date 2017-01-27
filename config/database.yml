@@ -80,7 +80,6 @@ test:
 #
 production:
   <<: *default
-  host: localhost
   database: flashcards_production
   username: flashcards
 #  password: <%= ENV['FLASHCARDS_DATABASE_PASSWORD'] %>
