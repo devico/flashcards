@@ -22,7 +22,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-default_run_options[:shell] = '/bin/bash'
+set :shell, '/usr/bin/bash -l'
 
 ## Defaults:
 # set :scm,           :git
