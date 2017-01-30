@@ -75,7 +75,7 @@ namespace :deploy do
   desc 'Source environment variables'
   task :source_env do
     on roles(:app) do
-      invoke `source #{shared_path}/.env`
+      run("cd '#{shared_path}' && #{rake} `source .env` ")
     end
   end
 
