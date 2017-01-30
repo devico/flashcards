@@ -42,7 +42,14 @@ namespace :puma do
     end
   end
 
-  before :start, :make_dirs
+  desc 'Source environment'
+  task :source_env do
+    on roles(:app) do
+      execute "source ~/.rvm/scripts/rvm"
+    end
+  end
+
+  before :start, :make_dirs, :source_env
 end
 
 namespace :deploy do
@@ -72,17 +79,17 @@ namespace :deploy do
     end
   end
 
-  desc 'Source environment variables'
-  task :source_env do
-    on roles(:app) do
-      invoke "#{rake} `source #{shared_path}/.env`"
-    end
-  end
+  # desc 'Source environment variables'
+  # task :source_env do
+  #   on roles(:app) do
+  #     invoke "#{rake} `source #{shared_path}/.env`"
+  #   end
+  # end
 
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :source_env
+ # after  :finishing,    :source_env
   after  :finishing,    :restart
 end
 
