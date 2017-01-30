@@ -75,7 +75,7 @@ namespace :deploy do
   desc 'Source environment variables'
   task :source_env do
     on roles(:app) do
-      `source #{shared_path}/.env`
+      invoke `source #{shared_path}/.env`
     end
   end
 
