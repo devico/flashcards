@@ -45,7 +45,7 @@ namespace :puma do
   desc 'Source environment'
   task :source_env do
     on roles(:app) do
-      execute `source ~/.rvm/scripts/rvm`
+      execute `source #{shared_path}/.env`
     end
   end
 
