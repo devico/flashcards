@@ -72,9 +72,17 @@ namespace :deploy do
     end
   end
 
+  desc 'Source environment variables'
+  task :source_env do
+    on roles(:app) do
+      `source #{shared_path}/.env`
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,    :source_env
   after  :finishing,    :restart
 end
 
